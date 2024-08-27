@@ -1,0 +1,9 @@
+/* Apply Josefin Sans to the entire body */
+body {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+/* Style the content div */
+.content {
+    /* Other styles (background, padding, etc.) */
+}
