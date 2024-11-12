@@ -1,54 +1,107 @@
-/* Apply Josefin Sans to the entire body */
-body {
-    font-family: 'Josefin Sans', sans-serif;
-}
-
-/* Style the content div */
-.content {
-    /* Other styles (background, padding, etc.) */
-}
-
-/* Black banner styles */
-.banner {
-    background-color: black;
-    color: white;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* Dropdown button */
-.dropbtn {
-    background-color: inherit;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-/* Dropdown content */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #333;
-    min-width: 160px;
-    z-index: 1;
-}
-
-/* Show dropdown content on hover */
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* Style dropdown links */
-.dropdown-content a {
-    color: white;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-/* Hover effect for dropdown links */
-.dropdown-content a:hover {
-    background-color: #444;
-}
+// The Hellzone
+color: #FFD700;
+ font-size: 36px;
+ font-family: H74 Augmented;
+ font-weight: 400;
+ line-height: 24px;
+ letter-spacing: 0.50px;
+ word-wrap: break-word
+---
+// Welcome to the Hellzone
+color: white;
+ font-size: 64px;
+ font-family: H74 Augmented;
+ font-weight: 400;
+ line-height: 24px;
+ letter-spacing: 0.50px;
+ word-wrap: break-word
+---
+// JOIN NOW
+color: #B24A00;
+ font-size: 40px;
+ font-family: H74 Augmented;
+ font-weight: 400;
+ line-height: 20px;
+ letter-spacing: 0.10px;
+ word-wrap: break-word
+---
+// ABOUT US
+color: white;
+ font-size: 64px;
+ font-family: H74 Augmented;
+ font-weight: 400;
+ line-height: 24px;
+ letter-spacing: 0.50px;
+ word-wrap: break-word
+---
+// Easy to use
+color: white;
+ font-size: 48px;
+ font-family: H74 Augmented;
+ font-weight: 400;
+ line-height: 24px;
+ letter-spacing: 0.50px;
+ word-wrap: break-word
+---
+// Milsim and LDD
+color: white;
+ font-size: 48px;
+ font-family: H74 Augmented;
+ font-weight: 400;
+ line-height: 24px;
+ letter-spacing: 0.50px;
+ word-wrap: break-word
+---
+// DEmocratic
+color: white;
+ font-size: 48px;
+ font-family: H74 Augmented;
+ font-weight: 400;
+ line-height: 24px;
+ letter-spacing: 0.50px;
+ word-wrap: break-word
+---
+// Ranks
+color: white;
+ font-size: 48px;
+ font-family: H74 Augmented;
+ font-weight: 400;
+ line-height: 24px;
+ letter-spacing: 0.50px;
+ word-wrap: break-word
+---
+// The server has been designed<br/>from the ground up to be <br/>fair but firm in it’s moderation.<br/>Be respectful,<br/>and we will respect you.
+color: white;
+ font-size: 32px;
+ font-family: FS Sinclair;
+ font-weight: 700;
+ line-height: 26px;
+ letter-spacing: 0.50px;
+ word-wrap: break-word
+---
+// We have systems in place<br/>that are easy to use<br/>and allow you to quickly<br/>join games and have fun.
+color: white;
+ font-size: 32px;
+ font-family: FS Sinclair;
+ font-weight: 700;
+ line-height: 26px;
+ letter-spacing: 0.50px;
+ word-wrap: break-word
+---
+// For those of you who wish to go<br/>the extra step, we have a MilSim<br/>and an elite division of Helldivers<br/>on the server, where only the <br/>best may join.
+color: white;
+ font-size: 32px;
+ font-family: FS Sinclair;
+ font-weight: 700;
+ line-height: 26px;
+ letter-spacing: 0.50px;
+ word-wrap: break-word
+---
+// To make your games more<br/>fun we hae integrated a system<br/>for you to keep track of and <br/>be rewarded for participating <br/>in the community.
+color: white;
+ font-size: 32px;
+ font-family: FS Sinclair;
+ font-weight: 700;
+ line-height: 26px;
+ letter-spacing: 0.50px;
+ word-wrap: break-word
