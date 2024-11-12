@@ -1,107 +1,162 @@
-// The Hellzone
-color: #FFD700;
- font-size: 36px;
- font-family: H74 Augmented;
- font-weight: 400;
- line-height: 24px;
- letter-spacing: 0.50px;
- word-wrap: break-word
----
-// Welcome to the Hellzone
-color: white;
- font-size: 64px;
- font-family: H74 Augmented;
- font-weight: 400;
- line-height: 24px;
- letter-spacing: 0.50px;
- word-wrap: break-word
----
-// JOIN NOW
-color: #B24A00;
- font-size: 40px;
- font-family: H74 Augmented;
- font-weight: 400;
- line-height: 20px;
- letter-spacing: 0.10px;
- word-wrap: break-word
----
-// ABOUT US
-color: white;
- font-size: 64px;
- font-family: H74 Augmented;
- font-weight: 400;
- line-height: 24px;
- letter-spacing: 0.50px;
- word-wrap: break-word
----
-// Easy to use
-color: white;
- font-size: 48px;
- font-family: H74 Augmented;
- font-weight: 400;
- line-height: 24px;
- letter-spacing: 0.50px;
- word-wrap: break-word
----
-// Milsim and LDD
-color: white;
- font-size: 48px;
- font-family: H74 Augmented;
- font-weight: 400;
- line-height: 24px;
- letter-spacing: 0.50px;
- word-wrap: break-word
----
-// DEmocratic
-color: white;
- font-size: 48px;
- font-family: H74 Augmented;
- font-weight: 400;
- line-height: 24px;
- letter-spacing: 0.50px;
- word-wrap: break-word
----
-// Ranks
-color: white;
- font-size: 48px;
- font-family: H74 Augmented;
- font-weight: 400;
- line-height: 24px;
- letter-spacing: 0.50px;
- word-wrap: break-word
----
-// The server has been designed<br/>from the ground up to be <br/>fair but firm in it’s moderation.<br/>Be respectful,<br/>and we will respect you.
-color: white;
- font-size: 32px;
- font-family: FS Sinclair;
- font-weight: 700;
- line-height: 26px;
- letter-spacing: 0.50px;
- word-wrap: break-word
----
-// We have systems in place<br/>that are easy to use<br/>and allow you to quickly<br/>join games and have fun.
-color: white;
- font-size: 32px;
- font-family: FS Sinclair;
- font-weight: 700;
- line-height: 26px;
- letter-spacing: 0.50px;
- word-wrap: break-word
----
-// For those of you who wish to go<br/>the extra step, we have a MilSim<br/>and an elite division of Helldivers<br/>on the server, where only the <br/>best may join.
-color: white;
- font-size: 32px;
- font-family: FS Sinclair;
- font-weight: 700;
- line-height: 26px;
- letter-spacing: 0.50px;
- word-wrap: break-word
----
-// To make your games more<br/>fun we hae integrated a system<br/>for you to keep track of and <br/>be rewarded for participating <br/>in the community.
-color: white;
- font-size: 32px;
- font-family: FS Sinclair;
- font-weight: 700;
- line-height: 26px;
- letter-spacing: 0.50px;
- word-wrap: break-word
+@font-face {
+    font-family: 'H74 Augmented';
+    src: url('path/to/H74Augmented-Variation00.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: 'wght' 400;
+}
+
+body {
+    margin: 0;
+    font-family: 'H74 Augmented', sans-serif;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: white;
+    border: 1px solid black;
+}
+
+.header {
+    width: 1440px;
+    height: 115px;
+    background: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.title {
+    position: absolute;
+    left: 117px;
+    top: 45px;
+    color: #FFD700;
+    font-size: 36px;
+    font-family: 'H74 Augmented';
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.50px;
+    word-wrap: break-word;
+}
+
+.welcome-text {
+    position: absolute;
+    left: 165px;
+    top: 708px;
+    color: white;
+    font-size: 64px;
+    font-family: 'H74 Augmented';
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.50px;
+    word-wrap: break-word;
+}
+
+.join-button {
+    width: 360px;
+    height: 95px;
+    background: linear-gradient(180deg, #FF6A00 0%, #FFD700 76%, white 100%);
+    position: absolute;
+    top: 846px;
+    left: 540px;
+    box-shadow: 0px 4px 4px white;
+    border-radius: 13px;
+}
+
+.join-text {
+    position: absolute;
+    top: 884px;
+    left: 602px;
+    color: #B24A00;
+    font-size: 40px;
+    font-family: 'H74 Augmented';
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.10px;
+    word-wrap: break-word;
+}
+
+.about-text {
+    position: absolute;
+    top: 1099px;
+    left: 527px;
+    color: white;
+    font-size: 64px;
+    font-family: 'H74 Augmented';
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.50px;
+    word-wrap: break-word;
+}
+
+.section-title, .description {
+    color: white;
+    font-size: 48px;
+    font-family: 'H74 Augmented';
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.50px;
+    word-wrap: break-word;
+}
+
+.section-title:nth-child(1) {
+    top: 1249px;
+    left: 158px;
+}
+
+.section-title:nth-child(2) {
+    top: 1249px;
+    left: 949px;
+}
+
+.section-title:nth-child(3) {
+    top: 1942px;
+    left: 150px;
+}
+
+.section-title:nth-child(4) {
+    top: 1942px;
+    left: 802px;
+}
+
+.description {
+    color: white;
+    font-size: 32px;
+    font-family: 'FS Sinclair';
+    font-weight: 700;
+    line-height: 26px;
+    letter-spacing: 0.50px;
+    word-wrap: break-word;
+}
+
+.description:nth-child(1) {
+    top: 1670px;
+    left: 118px;
+}
+
+.description:nth-child(2) {
+    top: 2363px;
+    left: 139px;
+}
+
+.description:nth-child(3) {
+    top: 2363px;
+    left: 782px;
+}
+
+.description:nth-child(4) {
+    top: 1670px;
+    left: 793px;
+}
+
+.blur-circle {
+    width: 281px;
+    height: 281px;
+    background: rgba(128, 128, 128, 0.40);
+    box-shadow: 100px 100px 100px;
+    border-radius: 9999px;
+    filter: blur(100px);
+    position: absolute;
+}
