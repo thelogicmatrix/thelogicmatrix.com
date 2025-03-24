@@ -54,13 +54,23 @@ footer {
 /* Masonry Gallery Styles */
 .masonry-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive column widths */
     gap: 10px;
 }
 
 .masonry-gallery img {
     width: 100%;
-    height: auto;
+    height: auto; /* Keeps the original aspect ratio of the image */
     border-radius: 8px;
     display: block;
+}
+
+/* Adjusting the container size based on image aspect ratio */
+.masonry-gallery div {
+    aspect-ratio: attr(data-aspect-ratio); /* Dynamically sets container size */
+}
+
+/* Example landscape photos spanning two columns */
+.masonry-gallery .landscape {
+    grid-column: span 2;
 }

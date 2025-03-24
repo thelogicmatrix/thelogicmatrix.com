@@ -1,4 +1,5 @@
 import os
+from PIL import Image  # Using Pillow to handle image dimensions
 
 # Path to your image folder
 image_folder = r"C:\Users\Nathan\Documents\GitHub\thelogicmatrix.com\assets\imgall"
@@ -19,7 +20,19 @@ html_output = """
 # Loop through all files in the image folder
 for filename in sorted(os.listdir(image_folder)):
     if filename.lower().endswith(('.png', '.jpg', '.jpeg', '.gif')):
-        html_output += f'        <img src="assets/imgall/{filename}" alt="{filename}" class="w-full h-auto object-cover rounded">\n'
+        file_path = os.path.join(image_folder, filename)
+        
+        # Open the image to get its dimensions
+        try:
+            with Image.open(file_path) as img:
+                width, height = img.size
+                aspect_ratio = width / height
+                # Add aspect ratio to the HTML output
+                html_output += f'        <div data-aspect-ratio="{aspect_ratio:.2f}">\n'
+                html_output += f'            <img src="assets/imgall/{filename}" alt="{filename}" class="w-full h-auto object-cover rounded">\n'
+                html_output += f'        </div>\n'
+        except Exception as e:
+            print(f"Error processing {filename}: {e}")
 
 # Close the HTML
 html_output += """
@@ -28,7 +41,9 @@ html_output += """
 """
 
 # Write the HTML to a file
-with open(output_file, "w", encoding="utf-8") as file:
-    file.write(html_output)
-
-print(f"HTML gallery saved to {output_file}")
+try:
+    with open(output_file, "w", encoding="utf-8") as file:
+        file.write(html_output)
+    print(f"HTML gallery saved to {output_file}")
+except Exception as e:
+    print(f"Error saving HTML file: {e}")
