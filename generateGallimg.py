@@ -4,53 +4,66 @@ from PIL import Image  # Using Pillow to handle image dimensions
 # Path to your image folder
 image_folder = r"C:\Users\Nathan\Documents\GitHub\thelogicmatrix.com\assets\imgall"
 
+# Path to the template HTML file
+template_file = r"C:\Users\Nathan\Documents\GitHub\thelogicmatrix.com\template.html"
+
 # Output HTML file
 output_file = r"C:\Users\Nathan\Documents\GitHub\thelogicmatrix.com\gallery.html"
 
-# Verify the image folder path
+# Verify the paths
 print("Image folder path:", os.path.abspath(image_folder))
+print("Template file path:", os.path.abspath(template_file))
 
-# Start the HTML output
-html_output = """
-<section class="gallery">
-    <h2 class="text-xl font-bold mb-4">Gallery</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-"""
+# Read the template file
+try:
+    with open(template_file, "r", encoding="utf-8") as file:
+        template_html = file.read()
+except Exception as e:
+    print(f"Error reading template file: {e}")
+    exit()
 
-# Loop through all files in the image folder
+# Find the placeholder for images in the template
+placeholder = "<!-- Images will be inserted here -->"
+
+if placeholder not in template_html:
+    print("Placeholder not found in template file. Please add '<!-- Images will be inserted here -->' to your template.")
+    exit()
+
+# Generate the image divs
+image_divs = ""
 for filename in sorted(os.listdir(image_folder)):
     if filename.lower().endswith(('.png', '.jpg', '.jpeg', '.gif')):
         file_path = os.path.join(image_folder, filename)
-        
+
         # Open the image to get its dimensions
         try:
             with Image.open(file_path) as img:
                 width, height = img.size
                 aspect_ratio = width / height
-                
+
                 # Determine if the image is landscape
-                if width > height:
-                    landscape_class = "landscape"  # Add 'landscape' class for landscape photos
-                else:
-                    landscape_class = ""
-                
-                # Add aspect ratio and landscape class to the HTML output
-                html_output += f'        <div data-aspect-ratio="{aspect_ratio:.2f}" class="{landscape_class}">\n'
-                html_output += f'            <img src="assets/imgall/{filename}" alt="{filename}" class="w-full h-auto object-cover rounded">\n'
-                html_output += f'        </div>\n'
+                landscape_class = "landscape" if width > height else ""
+
+                # Determine if the image is a hero image
+                hero_class = "hero" if "hero" in filename.lower() else ""
+
+                # Combine classes
+                combined_classes = f"{landscape_class} {hero_class}".strip()
+
+                # Create the image div
+                image_divs += f'        <div data-aspect-ratio="{aspect_ratio:.2f}" class="{combined_classes}">\n'
+                image_divs += f'            <img src="assets/imgall/{filename}" alt="{filename}" class="w-full h-auto object-cover rounded">\n'
+                image_divs += f'        </div>\n'
         except Exception as e:
             print(f"Error processing {filename}: {e}")
 
-# Close the HTML
-html_output += """
-    </div>
-</section>
-"""
+# Replace the placeholder with the generated image divs
+final_html = template_html.replace(placeholder, image_divs)
 
-# Write the HTML to a file
+# Save the updated HTML to the output file
 try:
     with open(output_file, "w", encoding="utf-8") as file:
-        file.write(html_output)
+        file.write(final_html)
     print(f"HTML gallery saved to {output_file}")
 except Exception as e:
     print(f"Error saving HTML file: {e}")
