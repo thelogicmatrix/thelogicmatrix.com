@@ -1,5 +1,5 @@
 // Load the navigation dynamically
-fetch('navigation.html')
+fetch('nav.html')
     .then(response => {
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
