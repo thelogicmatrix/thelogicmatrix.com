@@ -8,7 +8,7 @@ image_folder = r"C:\Users\Nathan\Documents\GitHub\thelogicmatrix.com\assets\imga
 template_file = r"C:\Users\Nathan\Documents\GitHub\thelogicmatrix.com\template.html"
 
 # Output HTML file
-output_file = r"C:\Users\Nathan\Documents\GitHub\thelogicmatrix.com\gallery.html"
+output_file = r"C:\Users\Nathan\Documents\GitHub\thelogicmatrix.com\layering-realities.html"
 
 # Verify the paths
 print("Image folder path:", os.path.abspath(image_folder))
@@ -44,11 +44,11 @@ for filename in sorted(os.listdir(image_folder)):
                 # Determine if the image is landscape
                 landscape_class = "landscape" if width > height else ""
 
-                # Determine if the image is a hero image
-                hero_class = "hero" if "hero" in filename.lower() else ""
+                # Determine if the image is a highlight image
+                highlight_class = "highlight" if "hero" in filename.lower() else ""
 
                 # Combine classes
-                combined_classes = f"{landscape_class} {hero_class}".strip()
+                combined_classes = f"{landscape_class} {highlight_class}".strip()
 
                 # Create the image div
                 image_divs += f'        <div data-aspect-ratio="{aspect_ratio:.2f}" class="{combined_classes}">\n'

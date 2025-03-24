@@ -76,7 +76,7 @@ footer {
 }
 
 /* Hero images spanning full width or larger */
-.masonry-gallery .hero {
+.masonry-gallery .highlight {
     grid-column: span 4; /* Makes hero images span across four columns */
     grid-row: span 2; /* Optional: Makes hero images taller */
 }
