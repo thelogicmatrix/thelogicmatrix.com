@@ -27,8 +27,15 @@ for filename in sorted(os.listdir(image_folder)):
             with Image.open(file_path) as img:
                 width, height = img.size
                 aspect_ratio = width / height
-                # Add aspect ratio to the HTML output
-                html_output += f'        <div data-aspect-ratio="{aspect_ratio:.2f}">\n'
+                
+                # Determine if the image is landscape
+                if width > height:
+                    landscape_class = "landscape"  # Add 'landscape' class for landscape photos
+                else:
+                    landscape_class = ""
+                
+                # Add aspect ratio and landscape class to the HTML output
+                html_output += f'        <div data-aspect-ratio="{aspect_ratio:.2f}" class="{landscape_class}">\n'
                 html_output += f'            <img src="assets/imgall/{filename}" alt="{filename}" class="w-full h-auto object-cover rounded">\n'
                 html_output += f'        </div>\n'
         except Exception as e:
