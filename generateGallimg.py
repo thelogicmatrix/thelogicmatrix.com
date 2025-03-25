@@ -1,8 +1,10 @@
 import os
 from PIL import Image  # Using Pillow to handle image dimensions
+from bs4 import BeautifulSoup  # For parsing the HTML content of the blog posts
 
 # Paths
 image_folder = r"C:\Users\Nathan\Documents\GitHub\thelogicmatrix.com\assets\imgall"
+blog_folder = r"C:\Users\Nathan\Documents\GitHub\thelogicmatrix.com\blog"
 template_file = r"C:\Users\Nathan\Documents\GitHub\thelogicmatrix.com\template.html"
 output_file = r"C:\Users\Nathan\Documents\GitHub\thelogicmatrix.com\layering-realities.html"
 
@@ -14,15 +16,17 @@ except Exception as e:
     print(f"Error reading template file: {e}")
     exit()
 
-# Image placeholder
+# Placeholders
 image_placeholder = "<!-- Images will be inserted here -->"
+blog_placeholder = "<!-- Blog links will be inserted here -->"
+overview_placeholder = "<!-- Blog summaries will be inserted here -->"
 
-# Verify image placeholder in the template
-if image_placeholder not in template_html:
-    print("Image placeholder not found in template file. Please add '<!-- Images will be inserted here -->' to your template.")
+# Verify placeholders in the template
+if image_placeholder not in template_html or blog_placeholder not in template_html:
+    print("Placeholders not found in template file. Please add them.")
     exit()
 
-# Generate image divs
+# Generate image divs for the gallery
 image_divs = ""
 for filename in sorted(os.listdir(image_folder)):
     if filename.lower().endswith(('.png', '.jpg', '.jpeg', '.gif')):
@@ -46,8 +50,34 @@ for filename in sorted(os.listdir(image_folder)):
         except Exception as e:
             print(f"Error processing {filename}: {e}")
 
-# Replace image placeholder in the template with generated content
-final_html = template_html.replace(image_placeholder, image_divs)
+# Generate blog links and summaries
+blog_links = ""
+blog_summaries = ""
+for filename in sorted(os.listdir(blog_folder)):
+    if filename.lower().endswith(".html"):
+        blog_file_path = os.path.join(blog_folder, filename)
+
+        # Open the blog post HTML and parse with BeautifulSoup
+        try:
+            with open(blog_file_path, "r", encoding="utf-8") as blog_file:
+                blog_html = blog_file.read()
+                soup = BeautifulSoup(blog_html, "html.parser")
+
+                # Extract the title and first paragraph for the summary
+                title = soup.title.string.strip() if soup.title else "Untitled"
+                first_paragraph = soup.find("p").get_text().strip() if soup.find("p") else "No summary available."
+
+                # Create a link and summary
+                blog_links += f'<li><a href="blog/{filename}">{title}</a></li>\n'
+                blog_summaries += f'<p><strong>{title}</strong>: {first_paragraph}</p>\n'
+
+        except Exception as e:
+            print(f"Error processing blog post {filename}: {e}")
+
+# Replace placeholders in the template with generated content
+final_html = template_html.replace(blog_placeholder, f"<ul>\n{blog_links}</ul>")
+final_html = final_html.replace(overview_placeholder, blog_summaries)
+final_html = final_html.replace(image_placeholder, image_divs)
 
 # Save the updated HTML to the output file
 try:
