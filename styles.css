@@ -173,3 +173,7 @@ footer {
     border: 1px solid #333; /* Border color for active tab */
     border-bottom: none;
 }
+
+.backlink {
+    color: green; /* Changes the text color to green */
+}
