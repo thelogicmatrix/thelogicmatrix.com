@@ -209,16 +209,10 @@ footer {
 }
 
 .tab-navigation ul li a.active {
-    color: #ffdd57; /* You can change this to another color, e.g., #333 */
-    border-color: #333;
+    color: green; /* You can change this to another color, e.g., #333 */
+    border-color: white;
 }
 
-/* For the active link state, we use the .activeLR class */
-.activeLR {
-    color: #147a00;  /* Subtle green color */
-    font-weight: 700; /* Bold text */
-    text-decoration: underline; /* Underline to distinguish the active link */
-}
 
 .tab-content {
     display: none;
