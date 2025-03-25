@@ -4,26 +4,27 @@ from PIL import Image  # Using Pillow to handle image dimensions
 # Paths
 image_folder = r"C:\Users\Nathan\Documents\GitHub\thelogicmatrix.com\assets\imgall"
 blog_folder = r"C:\Users\Nathan\Documents\GitHub\thelogicmatrix.com\blog"
-main_page = r"C:\Users\Nathan\Documents\GitHub\thelogicmatrix.com\layering-realities.html"
+template_file = r"C:\Users\Nathan\Documents\GitHub\thelogicmatrix.com\template.html"
+output_file = r"C:\Users\Nathan\Documents\GitHub\thelogicmatrix.com\layering-realities.html"
 
-# Read the main page file
+# Read the template file
 try:
-    with open(main_page, "r", encoding="utf-8") as file:
-        main_html = file.read()
+    with open(template_file, "r", encoding="utf-8") as file:
+        template_html = file.read()
 except Exception as e:
-    print(f"Error reading main page file: {e}")
+    print(f"Error reading template file: {e}")
     exit()
 
 # Placeholders
 blog_placeholder = "<!-- Blog links will be inserted here -->"
 image_placeholder = "<!-- Images will be inserted here -->"
 
-# Verify placeholders
-if blog_placeholder not in main_html:
-    print("Blog placeholder not found in main page. Please add '<!-- Blog links will be inserted here -->' to your template.")
+# Verify placeholders in the template
+if blog_placeholder not in template_html:
+    print("Blog placeholder not found in template file. Please add '<!-- Blog links will be inserted here -->' to your template.")
     exit()
-if image_placeholder not in main_html:
-    print("Image placeholder not found in main page. Please add '<!-- Images will be inserted here -->' to your template.")
+if image_placeholder not in template_html:
+    print("Image placeholder not found in template file. Please add '<!-- Images will be inserted here -->' to your template.")
     exit()
 
 # Generate blog links
@@ -57,14 +58,14 @@ for filename in sorted(os.listdir(image_folder)):
         except Exception as e:
             print(f"Error processing {filename}: {e}")
 
-# Update the main page HTML
-final_html = main_html.replace(blog_placeholder, f"<ul>\n{blog_links}</ul>")
+# Replace placeholders in the template with generated content
+final_html = template_html.replace(blog_placeholder, f"<ul>\n{blog_links}</ul>")
 final_html = final_html.replace(image_placeholder, image_divs)
 
-# Save the updated HTML
+# Save the updated HTML to the output file
 try:
-    with open(main_page, "w", encoding="utf-8") as file:
+    with open(output_file, "w", encoding="utf-8") as file:
         file.write(final_html)
-    print(f"Main page updated with blogs and images: {main_page}")
+    print(f"Updated HTML file saved to {output_file}")
 except Exception as e:
-    print(f"Error saving main page file: {e}")
+    print(f"Error saving updated HTML file: {e}")
