@@ -42,10 +42,12 @@
                 <ul>
                     <li><a href="#blog" id="blog-tab">Blog</a></li>
                     <li><a href="#gallery" id="gallery-tab">Gallery</a></li>
+                    <li><a href="#3d" id="3d-tab">3D</a></li>
+                    <li><a href="#audio" id="audio-tab">Audio</a></li>
                 </ul>
             </nav>
         </section>
-    
+
         <!-- Blog Tab -->
         <div id="blog" class="tab-content">
             <h2>Blog</h2>
@@ -75,6 +77,30 @@
                 <!-- Gallery images will be dynamically inserted here -->
             </div>
         </div>
+
+        <!-- 3D Tab -->
+        <div id="3d" class="tab-content">
+            <h2>3D</h2>
+            <p>Explore interactive 3D models related to the park's landscapes.</p>
+            <div class="3d-model-container">
+                <!-- Add 3D model embedding or interactive viewer here -->
+                <iframe src="path_to_your_3d_model_file_or_viewer" width="100%" height="500px"></iframe>
+            </div>
+        </div>
+
+        <!-- Audio Tab -->
+        <div id="audio" class="tab-content">
+            <h2>Audio</h2>
+            <p>Listen to the ambient soundscapes recorded at the Royal Park.</p>
+            <div class="audio-container">
+                <!-- Example audio player -->
+                <audio controls>
+                    <source src="assets/audio/park-soundscape.mp3" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+        </div>
+
     </main>    
 
     <!-- Modal Structure -->
@@ -93,19 +119,19 @@
             document.getElementById("imageModal").style.display = "block"; // Show the modal
             document.getElementById("modalImage").src = imageSrc; // Set the source of the modal image
         }
-
+    
         // Function to close the modal
         function closeModal() {
             document.getElementById("imageModal").style.display = "none"; // Hide the modal
         }
-
+    
         // Close modal if user clicks anywhere outside the modal content
         window.addEventListener("click", function(event) {
             if (event.target === document.getElementById("imageModal")) {
                 closeModal();
             }
         });
-
+    
         // Dynamically load gallery images
         document.addEventListener("DOMContentLoaded", function() {
             const galleryImages = [
@@ -114,9 +140,9 @@
                 "assets/imgall/park3.jpg",
                 "assets/imgall/park4.jpg" // Add more image paths as necessary
             ];
-
+    
             const galleryContainer = document.getElementById('gallery-images');
-
+    
             galleryImages.forEach(imageSrc => {
                 const galleryItem = document.createElement('div');
                 galleryItem.classList.add('gallery-item');
@@ -125,7 +151,38 @@
                 `;
                 galleryContainer.appendChild(galleryItem);
             });
+    
+            // Handle tab switching
+            const tabs = document.querySelectorAll('.tab-navigation a');
+            const tabContents = document.querySelectorAll('.tab-content');
+    
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Hide all tab content
+                    tabContents.forEach(content => {
+                        content.style.display = 'none';
+                    });
+    
+                    // Remove active class from all tabs
+                    tabs.forEach(tab => {
+                        tab.classList.remove('active');
+                    });
+    
+                    // Show the clicked tab's content
+                    const targetContent = document.querySelector(tab.getAttribute('href'));
+                    targetContent.style.display = 'block';
+    
+                    // Set the clicked tab as active
+                    tab.classList.add('active');
+                });
+            });
+    
+            // Set the first tab as active by default
+            document.querySelector('#blog-tab').classList.add('active');
+            document.querySelector('#blog').style.display = 'block';
         });
-    </script>
+    </script>    
 </body>
 </html>
