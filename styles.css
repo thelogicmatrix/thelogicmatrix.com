@@ -4,6 +4,7 @@ body {
     padding: 0;
     background-color: #f4f4f9;
     color: #333;
+    line-height: 1.6;
 }
 
 .navigation {
@@ -11,37 +12,71 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #333; /* Dark gray background */
+    background: linear-gradient(45deg, #333, #555); /* Gradient background */
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.site-logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.site-name {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 24px; /* Slightly larger site name */
+    font-weight: 700;
+    color: #fff;
 }
 
 .nav-right ul {
-    display: flex; /* Arrange items horizontally */
-    list-style: none; /* Remove bullet points */
-    margin: 0; /* Reset margin */
-    padding: 0; /* Reset padding */
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-right ul li {
-    margin: 0 15px; /* Add spacing between items */
+    margin: 0 20px; /* Increased space between items */
 }
 
 .nav-right ul li a {
-    text-decoration: none; /* Remove underline from links */
-    font-family: 'Josefin Sans', sans-serif;
-    color: #fff; /* Ensure text color contrasts with nav background */
+    text-decoration: none;
+    color: #fff;
     font-size: 18px;
+    font-weight: 600; /* Slightly bolder links */
+    transition: color 0.3s ease;
+}
+
+.nav-right ul li a:hover {
+    color: #ffdd57; /* Hover effect for links */
 }
 
 .nav-right ul li a.active {
+    color: #ffdd57; /* Active link highlight */
     font-weight: 700;
-    color: #ffdd57; /* Highlight color for active link */
 }
 
 .hero {
     text-align: center;
-    padding: 2rem;
+    padding: 3rem; /* Increased padding */
     background-color: #571515;
     color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.hero h1 {
+    font-size: 3rem; /* Larger main title */
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-top: 0;
 }
 
 main {
@@ -53,64 +88,50 @@ footer {
     padding: 1rem;
     background-color: #333;
     color: #f4f4f9;
+    font-size: 0.9rem;
 }
 
-/* Masonry Gallery Styles */
 .masonry-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive column widths */
-    gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjust grid column size */
+    gap: 15px; /* Increased gap between images */
+    margin-top: 2rem;
+}
+
+.masonry-gallery div {
+    position: relative;
+    overflow: hidden;
 }
 
 .masonry-gallery img {
     width: 100%;
-    height: auto; /* Keeps the original aspect ratio of the image */
-    border-radius: 8px;
-    display: block;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Adjusting the container size based on image aspect ratio */
-.masonry-gallery div {
-    aspect-ratio: attr(data-aspect-ratio); /* Dynamically sets container size */
+.masonry-gallery img:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Add shadow on hover */
 }
 
-/* Landscape photos spanning two columns */
 .masonry-gallery .landscape {
-    grid-column: span 2;
+    grid-column: span 2; /* Landscape images span 2 columns */
 }
 
-/* Hero images spanning full width or larger */
 .masonry-gallery .highlight {
-    grid-column: span 4; /* Makes hero images span across four columns */
-    grid-row: span 2; /* Optional: Makes hero images taller */
+    grid-column: span 4; /* Hero images span 4 columns */
+    grid-row: span 2; /* Optional: taller hero images */
 }
 
-.nav-left {
-    display: flex;
-    align-items: center; /* Align logo and text vertically */
-}
-
-.site-logo {
-    width: 40px; /* Adjust the size of the logo */
-    height: 40px;
-    margin-right: 10px; /* Space between logo and text */
-}
-
-.site-name {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 20px;
-    font-weight: 700; /* Makes the text bold */
-    color: #fff; /* Matches the navigation text color */
-}
-
-/* Tab navigation */
 .tab-navigation ul {
     display: flex;
     list-style: none;
     padding: 0;
     margin: 10px 0;
     border-bottom: 2px solid #333;
-    background-color: lightgrey; /* Light grey background for the tabs */
+    background-color: lightgrey;
+    border-radius: 8px; /* Rounded corners for tabs */
 }
 
 .tab-navigation ul li {
@@ -120,39 +141,35 @@ footer {
 .tab-navigation ul li a {
     text-decoration: none;
     color: #333;
-    padding: 10px 15px;
+    padding: 12px 20px;
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 700;
     border: 1px solid transparent;
-    transition: color 0.3s ease, border-color 0.3s ease;
+    transition: color 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
 }
 
 .tab-navigation ul li a:hover {
-    background-color: #e0e0e0; /* Slightly darker grey on hover */
+    background-color: #e0e0e0;
 }
 
 .tab-navigation ul li a.active {
     color: #ffdd57;
-    border-color: #333; /* Highlight active tab */
+    border-color: #333;
 }
 
-/* Tab content */
 .tab-content {
-    display: none; /* Hide by default */
+    display: none;
 }
 
 #blog:target,
 #gallery:target {
-    display: block; /* Show the targeted tab content */
+    display: block;
 }
 
-/* Highlight the active tab */
 .tab-navigation a {
-    text-decoration: none;
     padding: 10px 15px;
     font-family: 'Josefin Sans', sans-serif;
-    color: #333;
-    background-color: lightgrey; /* Light grey background for all tabs */
+    background-color: lightgrey;
     border: 1px solid #ccc;
     border-bottom: none;
     font-weight: 700;
@@ -160,27 +177,27 @@ footer {
 }
 
 .tab-navigation a:hover {
-    background-color: #e0e0e0; /* Slightly darker grey on hover */
+    background-color: #e0e0e0;
 }
 
 .tab-navigation a:visited {
     color: #333;
 }
 
-#concept:target ~ .tabs .tab-navigation a[href="#concept"],
+#blog:target ~ .tabs .tab-navigation a[href="#blog"],
 #gallery:target ~ .tabs .tab-navigation a[href="#gallery"] {
-    background-color: #fff; /* Highlight active tab with white */
-    border: 1px solid #333; /* Border color for active tab */
+    background-color: #fff;
+    border: 1px solid #333;
     border-bottom: none;
 }
 
 .backlink {
-    color: green; /* Changes the text color to green */
+    color: green;
 }
 
 .headimg {
-    width: auto; /* Ensures the image doesn't stretch unnecessarily */
-    max-width: 60%; /* Limits the image width to 90% of the container */
-    height: auto; /* Maintains aspect ratio */
-    margin: 0 auto; /* Centers the image and adds equal left/right margins */
+    width: auto;
+    max-width: 60%;
+    height: auto;
+    margin: 0 auto;
 }
