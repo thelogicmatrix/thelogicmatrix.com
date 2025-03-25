@@ -22,28 +22,32 @@
             </ul>
         </div>
     </nav>
+
     <header class="hero">
         <h1>Layering Realities</h1>
         <p>a Field Guide to the Royal Park</p>
     </header>
+
     <main>
         <section>
             <h2>Core Question</h2>
             <p>What is the purpose and use case for parks in modernity and within urban environments?</p>
             <h3>Summary</h3>
-            <p>This is an exploration of what purpose parks have in our modern society, as well as within our modern cities. The way I have decided to format this exploration of these concepts I have decided to put it to a collage of images, soundscapes and 3D models of the Royal Park. Through this and exploratory blog posts I will cover the concepts that I am trying to dig down into.</p>
+            <p>This is an exploration of what purpose parks have in our modern society, as well as within our modern cities. The way I have decided to format this exploration of these concepts is through a collage of images, soundscapes, and 3D models of the Royal Park. Through this and exploratory blog posts, I will cover the concepts that I am trying to dig down into.</p>
         </section>
         
         <!-- Tab Navigation -->
         <section class="tabs">
             <nav class="tab-navigation">
                 <ul>
-                    <li><a href="#blog" id="blog-tab" >Blog</a></li>
+                    <li><a href="#blog" id="blog-tab">Blog</a></li>
                     <li><a href="#gallery" id="gallery-tab">Gallery</a></li>
+                    <li><a href="#3d" id="3d-tab">3D</a></li>
+                    <li><a href="#audio" id="audio-tab">Audio</a></li>
                 </ul>
             </nav>
         </section>
-    
+
         <!-- Blog Tab -->
         <div id="blog" class="tab-content">
             <h2>Blog</h2>
@@ -51,7 +55,7 @@
             <div class="blog-list">
                 <ul>
                     <li class="blog-post">
-                        <a href="blog/blog-Urban Oasis.html">
+                        <a href="blog/blog-Urban-Oasis.html">
                             <div class="blog-thumbnail">
                                 <img src="../assets/imgall/DSCF1259Quickhero.jpg" alt="Urban Oasis Blog Post">
                             </div>
@@ -69,7 +73,7 @@
         <div id="gallery" class="tab-content">
             <h2>Gallery</h2>
             <p>Explore visuals that depict the idea of layering realities.</p>
-            <div class="masonry-gallery">
+            <div class="masonry-gallery" id="gallery-images">
                         <div data-aspect-ratio="0.67" class="">
             <img src="assets/imgall/DSCF0748Quick.jpg" alt="DSCF0748Quick.jpg" class="w-full h-auto object-cover rounded">
         </div>
@@ -343,9 +347,112 @@
 
             </div>
         </div>
+
+        <!-- 3D Tab -->
+        <div id="3d" class="tab-content">
+            <h2>3D</h2>
+            <p>Explore interactive 3D models related to the park's landscapes.</p>
+            <div class="3d-model-container">
+                <!-- Add 3D model embedding or interactive viewer here -->
+                <iframe src="path_to_your_3d_model_file_or_viewer" width="100%" height="500px"></iframe>
+            </div>
+        </div>
+
+        <!-- Audio Tab -->
+        <div id="audio" class="tab-content">
+            <h2>Audio</h2>
+            <p>Listen to the ambient soundscapes recorded at the Royal Park.</p>
+            <div class="audio-container">
+                <!-- Example audio player -->
+                <audio controls>
+                    <source src="assets/audio/park-soundscape.mp3" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+        </div>
+
     </main>    
+
+    <!-- Modal Structure -->
+    <div id="imageModal" class="modal">
+        <span class="modal-close" onclick="closeModal()">&times;</span>
+        <img id="modalImage" class="modal-image" src="" alt="Modal Image">
+    </div>
+
     <footer>
         <p>&copy; 2025 Nathan Wong. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Function to open the modal and display the selected image
+        function openModal(imageSrc) {
+            document.getElementById("imageModal").style.display = "block"; // Show the modal
+            document.getElementById("modalImage").src = imageSrc; // Set the source of the modal image
+        }
+    
+        // Function to close the modal
+        function closeModal() {
+            document.getElementById("imageModal").style.display = "none"; // Hide the modal
+        }
+    
+        // Close modal if user clicks anywhere outside the modal content
+        window.addEventListener("click", function(event) {
+            if (event.target === document.getElementById("imageModal")) {
+                closeModal();
+            }
+        });
+    
+        // Dynamically load gallery images
+        document.addEventListener("DOMContentLoaded", function() {
+            const galleryImages = [
+                "assets/imgall/park1.jpg",
+                "assets/imgall/park2.jpg",
+                "assets/imgall/park3.jpg",
+                "assets/imgall/park4.jpg" // Add more image paths as necessary
+            ];
+    
+            const galleryContainer = document.getElementById('gallery-images');
+    
+            galleryImages.forEach(imageSrc => {
+                const galleryItem = document.createElement('div');
+                galleryItem.classList.add('gallery-item');
+                galleryItem.innerHTML = `
+                    <img src="${imageSrc}" alt="Gallery Image" class="gallery-image" onclick="openModal('${imageSrc}')">
+                `;
+                galleryContainer.appendChild(galleryItem);
+            });
+    
+            // Handle tab switching
+            const tabs = document.querySelectorAll('.tab-navigation a');
+            const tabContents = document.querySelectorAll('.tab-content');
+    
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Hide all tab content
+                    tabContents.forEach(content => {
+                        content.style.display = 'none';
+                    });
+    
+                    // Remove active class from all tabs
+                    tabs.forEach(tab => {
+                        tab.classList.remove('active');
+                    });
+    
+                    // Show the clicked tab's content
+                    const targetContent = document.querySelector(tab.getAttribute('href'));
+                    targetContent.style.display = 'block';
+    
+                    // Set the clicked tab as active
+                    tab.classList.add('active');
+                });
+            });
+    
+            // Set the first tab as active by default
+            document.querySelector('#blog-tab').classList.add('active');
+            document.querySelector('#blog').style.display = 'block';
+        });
+    </script>    
 </body>
 </html>

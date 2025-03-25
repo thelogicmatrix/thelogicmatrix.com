@@ -155,7 +155,7 @@ footer {
 
 .blog-thumbnail img {
     width: 100%;
-    height: 200px;
+    height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
 }
@@ -209,8 +209,15 @@ footer {
 }
 
 .tab-navigation ul li a.active {
-    color: #ffdd57;
+    color: #ffdd57; /* You can change this to another color, e.g., #333 */
     border-color: #333;
+}
+
+/* For the active link state, we use the .activeLR class */
+.activeLR {
+    color: #147a00;  /* Subtle green color */
+    font-weight: 700; /* Bold text */
+    text-decoration: underline; /* Underline to distinguish the active link */
 }
 
 .tab-content {
