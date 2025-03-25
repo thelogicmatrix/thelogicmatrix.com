@@ -132,44 +132,50 @@ footer {
 }
 
 .tab-navigation ul li a.active {
-    color: #ffdd57;
-    border-color: #333; /* Highlight active tab */
+    background-color: #2e7d32; /* Dark green for active Blog tab */
+    color: #fff; /* White text */
+    border-radius: 5px;
 }
 
-/* Tab content */
-.tab-content {
-    display: none; /* Hide by default */
+/* Blog Overview */
+.blog-overview {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between blog entries */
 }
 
-#blog:target,
-#gallery:target {
-    display: block; /* Show the targeted tab content */
+.blog-entry {
+    padding: 20px;
+    background-color: #f4f4f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Highlight the active tab */
-.tab-navigation a {
+.blog-entry:hover {
+    transform: scale(1.02); /* Slightly enlarge on hover */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.blog-link {
     text-decoration: none;
-    padding: 10px 15px;
-    font-family: 'Josefin Sans', sans-serif;
-    color: #333;
-    background-color: lightgrey; /* Light grey background for all tabs */
-    border: 1px solid #ccc;
-    border-bottom: none;
-    font-weight: 700;
-    transition: all 0.3s ease;
+    color: inherit;
+    display: block; /* Make the whole entry clickable */
 }
 
-.tab-navigation a:hover {
-    background-color: #e0e0e0; /* Slightly darker grey on hover */
-}
-
-.tab-navigation a:visited {
+.blog-link h3 {
+    margin: 0 0 10px;
     color: #333;
 }
 
-#concept:target ~ .tabs .tab-navigation a[href="#concept"],
-#gallery:target ~ .tabs .tab-navigation a[href="#gallery"] {
-    background-color: #fff; /* Highlight active tab with white */
-    border: 1px solid #333; /* Border color for active tab */
-    border-bottom: none;
+.blog-link p {
+    margin: 0;
+    color: #555;
+}
+
+/* Divider */
+hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 20px 0;
 }
