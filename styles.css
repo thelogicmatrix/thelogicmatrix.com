@@ -290,3 +290,14 @@ footer {
     margin: 0 auto;
 }
 
+.backlink {
+    color: green; /* Default color for the backlink */
+    text-decoration: none; /* Ensures no underline by default */
+    transition: color 0.3s ease; /* Smooth transition when hovered */
+}
+
+.backlink:hover {
+    color: #ffdd57; /* Hover color for the backlink */
+    text-decoration: underline; /* Adds underline on hover */
+}
+
