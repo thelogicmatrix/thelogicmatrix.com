@@ -82,3 +82,21 @@ footer {
     grid-column: span 4; /* Makes hero images span across four columns */
     grid-row: span 2; /* Optional: Makes hero images taller */
 }
+
+.nav-left {
+    display: flex;
+    align-items: center; /* Align logo and text vertically */
+}
+
+.site-logo {
+    width: 40px; /* Adjust the size of the logo */
+    height: 40px;
+    margin-right: 10px; /* Space between logo and text */
+}
+
+.site-name {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 700; /* Makes the text bold */
+    color: #fff; /* Matches the navigation text color */
+}
