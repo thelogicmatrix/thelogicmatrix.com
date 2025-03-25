@@ -17,22 +17,25 @@ except Exception as e:
 
 # Placeholders
 blog_placeholder = "<!-- Blog links will be inserted here -->"
+overview_placeholder = "<!-- Blog summaries will be inserted here -->"
 image_placeholder = "<!-- Images will be inserted here -->"
 
 # Verify placeholders in the template
-if blog_placeholder not in template_html:
-    print("Blog placeholder not found in template file. Please add '<!-- Blog links will be inserted here -->' to your template.")
+if blog_placeholder not in template_html or overview_placeholder not in template_html:
+    print("Blog placeholders not found in template file. Please add the placeholders to your template.")
     exit()
 if image_placeholder not in template_html:
     print("Image placeholder not found in template file. Please add '<!-- Images will be inserted here -->' to your template.")
     exit()
 
-# Generate blog links
+# Generate blog links and summaries
 blog_links = ""
+blog_summaries = ""
 for filename in sorted(os.listdir(blog_folder)):
     if filename.lower().startswith("blog-") and filename.lower().endswith(".html"):
         blog_name = filename.split("blog-", 1)[1].rsplit(".html", 1)[0].replace("-", " ").title()
         blog_links += f'<li><a href="blog/{filename}">{blog_name}</a></li>\n'
+        blog_summaries += f'<p><strong>{blog_name}</strong>: This is an overview or summary of the blog entry "{blog_name}".</p>\n'
 
 # Generate image divs
 image_divs = ""
@@ -60,6 +63,7 @@ for filename in sorted(os.listdir(image_folder)):
 
 # Replace placeholders in the template with generated content
 final_html = template_html.replace(blog_placeholder, f"<ul>\n{blog_links}</ul>")
+final_html = final_html.replace(overview_placeholder, blog_summaries)
 final_html = final_html.replace(image_placeholder, image_divs)
 
 # Save the updated HTML to the output file
