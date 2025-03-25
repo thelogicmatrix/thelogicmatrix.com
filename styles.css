@@ -13,14 +13,27 @@ body {
     padding: 10px 20px;
     background-color: #333; /* Dark gray background */
 }
+.nav-right ul {
+    display: flex; /* Arrange items horizontally */
+    list-style: none; /* Remove bullet points */
+    margin: 0; /* Reset margin */
+    padding: 0; /* Reset padding */
+}
+
+.nav-right ul li {
+    margin: 0 15px; /* Add spacing between items */
+}
 
 .nav-right ul li a {
-    color: #fff; /* Make the text white for better contrast */
+    text-decoration: none; /* Remove underline from links */
+    font-family: 'Josefin Sans', sans-serif;
+    color: #fff; /* Ensure text color contrasts with nav background */
+    font-size: 18px;
 }
 
 .nav-right ul li a.active {
     font-weight: 700;
-    color: #ad2626; /* Optional: Add a highlight color for active links */
+    color: #ffdd57; /* Highlight color for active link */
 }
 .hero {
     text-align: center;
