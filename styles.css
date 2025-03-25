@@ -100,3 +100,40 @@ footer {
     font-weight: 700; /* Makes the text bold */
     color: #fff; /* Matches the navigation text color */
 }
+
+/* Tab navigation */
+.tab-navigation ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    border-bottom: 2px solid #333;
+}
+
+.tab-navigation ul li {
+    margin: 0 15px;
+}
+
+.tab-navigation ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 15px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 700;
+    border: 2px solid transparent;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.tab-navigation ul li a.active {
+    color: #ffdd57;
+    border-color: #333; /* Highlight active tab */
+}
+
+/* Tab content */
+.tab-content {
+    display: none; /* Hide by default */
+}
+
+.tab-content.active {
+    display: block; /* Show active content */
+}
