@@ -1,10 +1,8 @@
 import os
 from PIL import Image  # Using Pillow to handle image dimensions
-from bs4 import BeautifulSoup  # Using BeautifulSoup for parsing HTML
 
 # Paths
 image_folder = r"C:\Users\Nathan\Documents\GitHub\thelogicmatrix.com\assets\imgall"
-blog_folder = r"C:\Users\Nathan\Documents\GitHub\thelogicmatrix.com\blog"
 template_file = r"C:\Users\Nathan\Documents\GitHub\thelogicmatrix.com\template.html"
 output_file = r"C:\Users\Nathan\Documents\GitHub\thelogicmatrix.com\layering-realities.html"
 
@@ -16,43 +14,13 @@ except Exception as e:
     print(f"Error reading template file: {e}")
     exit()
 
-# Placeholders
-blog_placeholder = "<!-- Blog links will be inserted here -->"
-overview_placeholder = "<!-- Blog summaries will be inserted here -->"
+# Image placeholder
 image_placeholder = "<!-- Images will be inserted here -->"
 
-# Verify placeholders in the template
-if blog_placeholder not in template_html or overview_placeholder not in template_html:
-    print("Blog placeholders not found in template file. Please add the placeholders to your template.")
-    exit()
+# Verify image placeholder in the template
 if image_placeholder not in template_html:
     print("Image placeholder not found in template file. Please add '<!-- Images will be inserted here -->' to your template.")
     exit()
-
-# Generate blog links and introduction summaries
-blog_links = ""
-blog_summaries = ""
-for filename in sorted(os.listdir(blog_folder)):
-    if filename.lower().startswith("blog-") and filename.lower().endswith(".html"):
-        file_path = os.path.join(blog_folder, filename)
-
-        # Parse the blog file
-        try:
-            with open(file_path, "r", encoding="utf-8") as blog_file:
-                soup = BeautifulSoup(blog_file, "html.parser")
-                
-                # Extract title and introduction from the blog content
-                title_tag = soup.find("h1")  # Assuming <h1> holds the blog title
-                intro_tag = soup.find("p")  # Assuming the first <p> is the introductory content
-                
-                blog_title = title_tag.text.strip() if title_tag else filename.split("blog-", 1)[1].rsplit(".html", 1)[0].replace("-", " ").title()
-                blog_intro = intro_tag.text.strip() if intro_tag else f"This is an overview or introduction for the blog entry '{blog_title}'."
-                
-                # Create links and summaries
-                blog_links += f'<li><a href="blog/{filename}">{blog_title}</a></li>\n'
-                blog_summaries += f'<p><strong>{blog_title}</strong>: {blog_intro}</p>\n'
-        except Exception as e:
-            print(f"Error processing {filename}: {e}")
 
 # Generate image divs
 image_divs = ""
@@ -78,10 +46,8 @@ for filename in sorted(os.listdir(image_folder)):
         except Exception as e:
             print(f"Error processing {filename}: {e}")
 
-# Replace placeholders in the template with generated content
-final_html = template_html.replace(blog_placeholder, f"<ul>\n{blog_links}</ul>")
-final_html = final_html.replace(overview_placeholder, blog_summaries)
-final_html = final_html.replace(image_placeholder, image_divs)
+# Replace image placeholder in the template with generated content
+final_html = template_html.replace(image_placeholder, image_divs)
 
 # Save the updated HTML to the output file
 try:
