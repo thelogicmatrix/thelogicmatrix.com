@@ -141,7 +141,7 @@ footer {
     display: none; /* Hide by default */
 }
 
-#concept:target,
+#blog:target,
 #gallery:target {
     display: block; /* Show the targeted tab content */
 }
