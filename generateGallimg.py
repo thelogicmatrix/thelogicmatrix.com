@@ -3,7 +3,6 @@ from PIL import Image  # Using Pillow to handle image dimensions
 
 # Paths
 image_folder = r"C:\Users\Nathan\Documents\GitHub\thelogicmatrix.com\assets\imgall"
-blog_folder = r"C:\Users\Nathan\Documents\GitHub\thelogicmatrix.com\blog"
 template_file = r"C:\Users\Nathan\Documents\GitHub\thelogicmatrix.com\template.html"
 output_file = r"C:\Users\Nathan\Documents\GitHub\thelogicmatrix.com\layering-realities.html"
 
@@ -15,27 +14,13 @@ except Exception as e:
     print(f"Error reading template file: {e}")
     exit()
 
-# Placeholders
-blog_placeholder = "<!-- Blog links will be inserted here -->"
-overview_placeholder = "<!-- Blog summaries will be inserted here -->"
+# Image placeholder
 image_placeholder = "<!-- Images will be inserted here -->"
 
-# Verify placeholders in the template
-if blog_placeholder not in template_html or overview_placeholder not in template_html:
-    print("Blog placeholders not found in template file. Please add the placeholders to your template.")
-    exit()
+# Verify image placeholder in the template
 if image_placeholder not in template_html:
     print("Image placeholder not found in template file. Please add '<!-- Images will be inserted here -->' to your template.")
     exit()
-
-# Generate blog links and summaries
-blog_links = ""
-blog_summaries = ""
-for filename in sorted(os.listdir(blog_folder)):
-    if filename.lower().startswith("blog-") and filename.lower().endswith(".html"):
-        blog_name = filename.split("blog-", 1)[1].rsplit(".html", 1)[0].replace("-", " ").title()
-        blog_links += f'<li><a href="blog/{filename}">{blog_name}</a></li>\n'
-        blog_summaries += f'<p><strong>{blog_name}</strong>: This is an overview or summary of the blog entry "{blog_name}".</p>\n'
 
 # Generate image divs
 image_divs = ""
@@ -61,10 +46,8 @@ for filename in sorted(os.listdir(image_folder)):
         except Exception as e:
             print(f"Error processing {filename}: {e}")
 
-# Replace placeholders in the template with generated content
-final_html = template_html.replace(blog_placeholder, f"<ul>\n{blog_links}</ul>")
-final_html = final_html.replace(overview_placeholder, blog_summaries)
-final_html = final_html.replace(image_placeholder, image_divs)
+# Replace image placeholder in the template with generated content
+final_html = template_html.replace(image_placeholder, image_divs)
 
 # Save the updated HTML to the output file
 try:

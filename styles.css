@@ -177,3 +177,10 @@ footer {
 .backlink {
     color: green; /* Changes the text color to green */
 }
+
+.headimg {
+    width: auto; /* Ensures the image doesn't stretch unnecessarily */
+    max-width: 60%; /* Limits the image width to 90% of the container */
+    height: auto; /* Maintains aspect ratio */
+    margin: 0 auto; /* Centers the image and adds equal left/right margins */
+}
