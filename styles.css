@@ -134,6 +134,29 @@ body {
         font-size: 10vw;  /* Scale it down more for mobile devices */
     }
 
+    .tab-navigation ul {
+        flex-direction: column; /* Stack tabs vertically */
+        width: 100%; /* Ensure the tabs take full width */
+        text-align: center; /* Center-align the tab text */
+    }
+
+    .tab-navigation li {
+        margin-right: 0; /* Remove right margin */
+        margin-bottom: 10px; /* Space between stacked tabs */
+    }
+
+    .tab-navigation a {
+        padding: 15px; /* Add more padding for easier clicking */
+        font-size: 18px; /* Increase font size for readability */
+        border: 1px solid #ccc; /* Optional: Add borders for better tab separation */
+        display: block; /* Make each tab occupy the full width */
+        background-color: #f8f8f8; /* Optional: Give the tabs a background */
+    }
+
+    .tab-navigation a.active {
+        background-color: #ddd; /* Highlight active tab */
+    }
+    
     /* Hide the site name on mobile */
     .site-name {
         display: none;
