@@ -77,7 +77,9 @@
             <h2>Gallery</h2>
             <p>Explore visuals that depict the idea of layering realities.</p>
             <div class="masonry-gallery" id="gallery-images">
-                <!-- Images will be inserted here -->
+                <!-- Dynamic Gallery Images from Python will be inserted here -->
+                <!-- Example structure: -->
+                <!-- <div class="gallery-item"><img src="assets/imgall/park1.jpg" alt="Gallery Image" class="gallery-image" onclick="openModal('assets/imgall/park1.jpg')"></div> -->
             </div>
         </div>
 
@@ -93,25 +95,8 @@
                     xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share 
                     src="https://sketchfab.com/models/744e0554e53f4d08ba0a06c31dc8cc8d/embed">
                 </iframe>
-                <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> 
-                    <a href="https://sketchfab.com/3d-models/lowpoly-lod0-744e0554e53f4d08ba0a06c31dc8cc8d?utm_medium=embed&utm_campaign=share-popup&utm_content=744e0554e53f4d08ba0a06c31dc8cc8d" 
-                    target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">
-                        LowPoly_LOD0
-                    </a> 
-                    by 
-                    <a href="https://sketchfab.com/thelogicmatrix?utm_medium=embed&utm_campaign=share-popup&utm_content=744e0554e53f4d08ba0a06c31dc8cc8d" 
-                    target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">
-                        thelogicmatrix
-                    </a> 
-                    on 
-                    <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=744e0554e53f4d08ba0a06c31dc8cc8d" 
-                    target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">
-                        Sketchfab
-                    </a>
-                </p>
             </div>
         </div>
-
 
         <!-- Audio Tab -->
         <div id="audio" class="tab-content">
@@ -171,23 +156,7 @@
     
         // Dynamically load gallery images
         document.addEventListener("DOMContentLoaded", function() {
-            const galleryImages = [
-                "assets/imgall/park1.jpg",
-                "assets/imgall/park2.jpg",
-                "assets/imgall/park3.jpg",
-                "assets/imgall/park4.jpg" // Add more image paths as necessary
-            ];
-    
             const galleryContainer = document.getElementById('gallery-images');
-    
-            galleryImages.forEach(imageSrc => {
-                const galleryItem = document.createElement('div');
-                galleryItem.classList.add('gallery-item');
-                galleryItem.innerHTML = `
-                    <img src="${imageSrc}" alt="Gallery Image" class="gallery-image" onclick="openModal('${imageSrc}')">
-                `;
-                galleryContainer.appendChild(galleryItem);
-            });
     
             // Handle tab switching
             const tabs = document.querySelectorAll('.tab-navigation a');

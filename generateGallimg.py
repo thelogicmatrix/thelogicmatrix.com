@@ -40,8 +40,8 @@ for filename in sorted(os.listdir(image_folder)):
                 combined_classes = f"{landscape_class} {highlight_class}".strip()
 
                 # Create the image div
-                image_divs += f'        <div data-aspect-ratio="{aspect_ratio:.2f}" class="{combined_classes}">\n'
-                image_divs += f'            <img src="assets/imgall/{filename}" alt="{filename}" class="w-full h-auto object-cover rounded">\n'
+                image_divs += f'        <div class="gallery-item">\n'
+                image_divs += f'            <img src="assets/imgall/{filename}" alt="{filename}" class="gallery-image" onclick="openModal(\'assets/imgall/{filename}\')">\n'
                 image_divs += f'        </div>\n'
         except Exception as e:
             print(f"Error processing {filename}: {e}")
