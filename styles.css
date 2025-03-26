@@ -153,6 +153,11 @@ footer .backlink:hover {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Cursor pointer for expandable images */
+.masonry-gallery img {
+    cursor: pointer;
+}
+
 .masonry-gallery img:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
@@ -252,6 +257,7 @@ footer .backlink:hover {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
+/* Close button for modal */
 .modal-close {
     position: absolute;
     top: 20px;
