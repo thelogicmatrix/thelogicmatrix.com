@@ -238,7 +238,7 @@ footer {
 
 footer .backlink {
     text-decoration: none;
-    color: #ff5a5f;
+    color: #41c041;
     transition: color 0.3s ease;
 }
 
@@ -361,8 +361,8 @@ footer .backlink:hover {
 
 .tab-navigation ul li a.active {
     color: #fff;
-    background-color: #ff5a5f;
-    border-color: #ff5a5f;
+    background-color: #41c041;
+    border-color: #41c041;
 }
 
 /* Ensure all tab content is hidden initially */
@@ -393,8 +393,8 @@ footer .backlink:hover {
 #models:target ~ .tabs .tab-navigation ul li a[href="#models"],
 #audio:target ~ .tabs .tab-navigation ul li a[href="#audio"] {
     color: #fff;
-    background-color: #ff5a5f;
-    border-color: #ff5a5f;
+    background-color: #41c041;
+    border-color: #41c041;
 }
 
 /* Optional: You can add transition effects to smooth out the tab switch */
@@ -578,6 +578,31 @@ footer .backlink:hover {
 }
 
 .about-hero p {
+    font-size: 20px;  /* Paragraph text size */
+    font-weight: 400;
+    margin-top: 20px;
+}
+
+/* Layering Realities Hero Section Styles */
+.lr-hero {
+    background-color: #165c16;  /* Red background color */
+    color: white;  /* Text color white */
+    padding: 80px 20px;  /* Add some padding for spacing */
+    text-align: center;  /* Center text */
+}
+
+.lr-hero h1 {
+    font-size: 60px;  /* Large header for the title */
+    font-weight: 700;
+}
+
+.lr-hero h2 {
+    font-size: 40px;  /* Subheading for the name */
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.lr-hero p {
     font-size: 20px;  /* Paragraph text size */
     font-weight: 400;
     margin-top: 20px;
