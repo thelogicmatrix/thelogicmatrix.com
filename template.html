@@ -52,7 +52,7 @@
             <h2>Core Question</h2>
             <p>What is the purpose and use case for parks in modernity and within urban environments?</p>
             <h3>Summary</h3>
-            <p>This is an exploration of what purpose parks have in our modern society, as well as within our modern cities. The way I have decided to format this exploration of these concepts is through a collage of images, soundscapes, and 3D models of the Royal Park. Through this and exploratory blog posts, I will cover the concepts that I am trying to dig down into.</p>
+            <p>This is an exploration of what purpose parks have in our modern society, as well as within our modern cities. The way I have decided to format this exploration of these concepts is through a collage of images, soundscapes, and Models of the Royal Park. Through this and exploratory blog posts, I will cover the concepts that I am trying to dig down into.</p>
         </section>
         
         <!-- Tab Navigation -->
@@ -61,7 +61,7 @@
                 <ul>
                     <li><a href="#blog" id="blog-tab">Blog</a></li>
                     <li><a href="#gallery" id="gallery-tab">Gallery</a></li>
-                    <li><a href="#3d" id="3d-tab">3D</a></li>
+                    <li><a href="#models" id="models-tab">Models</a></li>
                     <li><a href="#audio" id="audio-tab">Audio</a></li>
                 </ul>
             </nav>
@@ -96,19 +96,24 @@
                  <!-- Images will be inserted here -->
             </div>
         </div>
-
-        <!-- 3D Tab -->
-        <div id="3d" class="tab-content">
-            <h2>3D</h2>
-            <p>Explore interactive 3D models related to the park's landscapes.</p>
+                
+        <!-- Models Tab -->
+        <div id="models" class="tab-content">
+            <h2>Models</h2>
+            <p>Explore interactive Models related to the park's landscapes.</p>
             
-            <!-- Sketchfab Embed -->
-            <div class="sketchfab-embed-wrapper">
-                <iframe title="LowPoly_LOD0" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" 
-                    allow="autoplay; fullscreen; xr-spatial-tracking" 
-                    xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share 
-                    src="https://sketchfab.com/models/744e0554e53f4d08ba0a06c31dc8cc8d/embed">
-                </iframe>
+            <!-- New Models Container -->
+            <div class="container-models">
+                <!-- Sketchfab Embed -->
+                <div class="model-item">
+                    <h3>Low Poly Model</h3>
+                    <div class="sketchfab-embed-wrapper">
+                        <iframe title="LowPoly_LOD0" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" 
+                                allow="autoplay; fullscreen; xr-spatial-tracking" 
+                                src="https://sketchfab.com/models/744e0554e53f4d08ba0a06c31dc8cc8d/embed">
+                        </iframe>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -150,7 +155,7 @@
     </footer>
 
     <script>
-                // Function to toggle the mobile menu
+        // Function to toggle the mobile menu
         function toggleMobileMenu() {
             const mobileMenu = document.getElementById("mobileMenu");
             mobileMenu.classList.toggle("show");

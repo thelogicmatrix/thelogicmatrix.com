@@ -360,10 +360,14 @@ footer .backlink:hover {
     display: block;
 }
 
+
+
 /* Only show the content for the active tab */
 #blog:target,
 #gallery:target,
-#3d:target,
+#models:target{
+    display: block;
+}
 #audio:target {
     display: block;
 }
@@ -371,7 +375,7 @@ footer .backlink:hover {
 /* Add styles for active tab link */
 #blog:target ~ .tabs .tab-navigation ul li a[href="#blog"],
 #gallery:target ~ .tabs .tab-navigation ul li a[href="#gallery"],
-#3d:target ~ .tabs .tab-navigation ul li a[href="#3d"],
+#models:target ~ .tabs .tab-navigation ul li a[href="#models"],
 #audio:target ~ .tabs .tab-navigation ul li a[href="#audio"] {
     color: #fff;
     background-color: #ff5a5f;
@@ -386,7 +390,7 @@ footer .backlink:hover {
 /* Make sure the tab content fades in and out */
 #blog:target,
 #gallery:target,
-#3d:target,
+#models:target,
 #audio:target {
     opacity: 1;
 }
@@ -436,15 +440,15 @@ footer .backlink:hover {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* New 3D Section */
-#3d {
+/* New Models Section */
+#models {
     background-color: #fff;
     padding: 50px 30px;
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
-#3d h2 {
+#models h2 {
     font-size: 2.8rem;
     color: #333;
     font-weight: 700;
@@ -452,7 +456,7 @@ footer .backlink:hover {
     text-align: center;
 }
 
-#3d p {
+#models p {
     font-size: 1.2rem;
     color: #666;
     text-align: center;
@@ -460,18 +464,45 @@ footer .backlink:hover {
     margin-bottom: 30px;
 }
 
-#3d .viewer-container {
+#models .viewer-container {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 30px;
 }
 
-#3d .viewer-container iframe {
+#models .viewer-container iframe {
     width: 80%;
     height: 450px;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Style for Models container */
+.container-models {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Flexible grid layout */
+    gap: 20px; /* Space between models */
+    margin-top: 20px;
+}
+
+/* Style for each Model item */
+.model-item {
+    text-align: center;
+}
+
+/* Title for each Model */
+.model-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Style for embedded Sketchfab iframe */
+.sketchfab-embed-wrapper iframe {
+    width: 100%;
+    height: 500px; /* Height to ensure the model fits well */
+    border: none;
 }
 
 /* New Audio Section */
