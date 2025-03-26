@@ -310,7 +310,6 @@ footer .backlink:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
-
 /* Blog post container styling */
 .blog-post {
     background-color: #fff;
@@ -318,12 +317,8 @@ footer .backlink:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
 }
 
-/* Hover effect for blog posts */
 .blog-post:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
@@ -331,18 +326,17 @@ footer .backlink:hover {
 
 /* Blog post link styles */
 .blog-post a {
-    color: black;
-    text-decoration: none;
-    display: block;  /* Make the entire blog post clickable */
+    color: black; /* Set default text color to black */
+    text-decoration: underline; /* Ensure underline */
+    text-decoration-color: black; /* Set underline to black */
 }
 
 /* Hover state for blog post links */
 .blog-post a:hover {
-    color: darkgray;
-    text-decoration: underline;
+    color: darkgray; /* Change color on hover */
+    text-decoration-color: darkgray; /* Change underline color on hover */
 }
 
-/* Thumbnail image styling */
 .blog-thumbnail img {
     width: 100%;
     height: auto;
@@ -354,57 +348,19 @@ footer .backlink:hover {
     transform: scale(1.1);
 }
 
-/* Blog info container */
 .blog-info {
     padding: 20px;
-    background-color: #f9f9f9;
-    display: flex;
-    flex-direction: column;
 }
 
-/* Blog title */
 .blog-info h3 {
     font-size: 1.6rem;
     color: #333;
     margin-bottom: 10px;
-    font-weight: 600;
 }
 
-/* Blog description text */
 .blog-info p {
     font-size: 1rem;
     color: #666;
-    line-height: 1.5;
-    margin: 0;
-}
-
-/* Mobile view adjustments */
-@media (max-width: 768px) {
-    .blog-post {
-        /* Center-align the blog post on mobile */
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 100%;
-        padding: 10px;  /* Add padding for mobile view */
-    }
-
-    .blog-info {
-        padding: 15px;
-    }
-
-    .blog-info h3 {
-        font-size: 1.4rem; /* Smaller title size for mobile */
-    }
-
-    .blog-info p {
-        font-size: 0.95rem; /* Smaller text size for mobile */
-    }
-
-    /* Ensure all blog post content fits within mobile screens */
-    .blog-thumbnail img {
-        width: 100%;  /* Ensure images are responsive */
-        object-fit: cover;
-    }
 }
 
 /* Tab navigation styles */
