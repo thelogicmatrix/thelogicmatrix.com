@@ -12,15 +12,15 @@
 <body>
     <nav class="navigation">
         <div class="nav-left">
-            <img src="assets/sitelogo.png" alt="Site Logo" class="site-logo">
+            <img src="../assets/sitelogo.png" alt="Site Logo" class="site-logo">
             <span class="site-name">Thelogicmatrix</span>
         </div>
         <div class="nav-right">
             <ul class="desktop-nav">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../layering-realities.html">Layering Realities</a></li>
+                <li><a href="../index.html">Home</a></li> <!-- Added ../ to go to the root directory -->
+                <li><a href="../layering-realities.html" class="active">Layering Realities</a></li> <!-- Added ../ to go to the root directory -->
                 <li><a href="../about.html">About</a></li>
-                <li><a href="../contact.html" class="active">Contact</a></li>
+                <li><a href="../contact.html">Contact</a></li>
             </ul>
             <!-- Mobile Menu Icon (Hamburger) - Now included directly as SVG -->
             <div class="mobile-menu-icon" onclick="toggleMobileMenu()">
@@ -29,8 +29,17 @@
                 </svg>
             </div>
         </div>
-    </nav>
-
+    </nav>    
+    
+    <!-- Mobile Menu Dropdown -->
+    <div class="mobile-dropdown" id="mobileMenu">
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../layering-realities.html" class="active">Layering Realities</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+        </ul>
+    </div>
     <header class="hero text-center">
         <h1>Contact Me</h1>
     </header>
