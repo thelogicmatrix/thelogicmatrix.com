@@ -638,3 +638,8 @@ footer .backlink:hover {
     font-weight: 400;
     margin-top: 20px;
 }
+
+.nav-left a {
+    text-decoration: none;  /* Remove underline */
+    color: inherit;         /* Inherit the color from parent elements */
+}
