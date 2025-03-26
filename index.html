@@ -41,23 +41,32 @@
         </ul>
     </div>
 
-    <header class="hero text-center">
-        <h1 style="font-size:60px">Hi there!</h1>
-        <img src="assets/nathan.jpg" alt="headshot" width="320px" class="mx-auto">
-        <h2>I'm Nathan Wong.</h2>
-        <p>I make 3d models, and sometimes, games.</p>
+    <header class="hero text-center" style="background-image: url('assets/heroback.jpg'); background-size: cover; background-position: center; position: relative;">
+        <!-- Overlay for dimming effect -->
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.4); z-index: 1;"></div>
+        
+        <h1 style="font-size:60px; position: relative; z-index: 2;">Welcome.</h1>
+        
+        <!-- Scalable site logo -->
+        <img src="assets/sitelogo.png" alt="Site Logo" class="mx-auto" style="position: relative; z-index: 2; width: 30vw; max-width: 320px;">
+    
+        <h1 style="position: relative; z-index: 2;">Thelogicmatrix</h1>
+        <p style="position: relative; z-index: 2;">Turning vertices into reality</p>
     </header>
+    
     <main>
         <section id="about">
             <h2>About</h2>
             <p>I'm planning on using this site as a general portfolio in the future, if you're here to check out my work for layering realities, just navigate using the tabs up top.</p>
         </section>
     </main>
+
     <footer>
         <p>&copy; 2025 Nathan Wong. All rights reserved.</p>
     </footer>
+
     <script>
-                // Function to toggle the mobile menu
+        // Function to toggle the mobile menu
         function toggleMobileMenu() {
             const mobileMenu = document.getElementById("mobileMenu");
             mobileMenu.classList.toggle("show");
