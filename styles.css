@@ -557,3 +557,28 @@ footer .backlink:hover {
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+
+/* About Hero Section Styles */
+.about-hero {
+    background-color: #5c1618;  /* Red background color */
+    color: white;  /* Text color white */
+    padding: 80px 20px;  /* Add some padding for spacing */
+    text-align: center;  /* Center text */
+}
+
+.about-hero h1 {
+    font-size: 60px;  /* Large header for the title */
+    font-weight: 700;
+}
+
+.about-hero h2 {
+    font-size: 40px;  /* Subheading for the name */
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.about-hero p {
+    font-size: 20px;  /* Paragraph text size */
+    font-weight: 400;
+    margin-top: 20px;
+}
