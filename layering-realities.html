@@ -422,41 +422,40 @@
             }
         });
 
-    
-        // Dynamically load gallery images
+        // Dynamically load gallery images and handle tab switching
         document.addEventListener("DOMContentLoaded", function() {
             const galleryContainer = document.getElementById('gallery-images');
-    
-            // Handle tab switching
             const tabs = document.querySelectorAll('.tab-navigation a');
             const tabContents = document.querySelectorAll('.tab-content');
-    
+
+            // Initially hide all tab contents
+            tabContents.forEach(content => content.classList.remove('active'));
+
+            // Show the first tab's content by default (this part will handle the first tab showing)
+            const defaultTab = document.querySelector('#blog'); // Change to the first tab's ID
+            if (defaultTab) {
+                defaultTab.classList.add('active');
+            }
+
+            // Handle tab switching
             tabs.forEach(tab => {
                 tab.addEventListener('click', function(e) {
                     e.preventDefault();
-                    
-                    // Hide all tab content
-                    tabContents.forEach(content => {
-                        content.style.display = 'none';
-                    });
-    
-                    // Remove active class from all tabs
-                    tabs.forEach(tab => {
-                        tab.classList.remove('active');
-                    });
-    
-                    // Show the clicked tab's content
-                    const targetContent = document.querySelector(tab.getAttribute('href'));
-                    targetContent.style.display = 'block';
-    
-                    // Set the clicked tab as active
+
+                    // Remove 'active' class from all tabs and tab content
+                    tabs.forEach(tab => tab.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+
+                    // Add 'active' class to the clicked tab and its corresponding content
                     tab.classList.add('active');
+                    const targetContent = document.querySelector(tab.getAttribute('href'));
+                    targetContent.classList.add('active');
                 });
             });
-    
+
             // Set the first tab as active by default
             document.querySelector('#blog-tab').classList.add('active');
-            document.querySelector('#blog').style.display = 'block';
+            document.querySelector('#blog').classList.add('active');
         });
     </script>    
 </body>

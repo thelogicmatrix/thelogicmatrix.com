@@ -238,6 +238,11 @@ footer .backlink:hover {
 /* Ensure all tab content is hidden initially */
 .tab-content {
     display: none;
+    transition: opacity 0.3s ease;
+}
+
+.tab-content.active {
+    display: block;
 }
 
 /* Only show the content for the active tab */
