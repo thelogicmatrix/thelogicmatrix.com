@@ -319,51 +319,79 @@ footer .backlink:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px;  /* Add space between blog posts */
 }
 
+/* Hover effect for blog posts */
 .blog-post:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px); /* Slight elevation effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Increase shadow on hover */
 }
 
 /* Blog post link styles */
 .blog-post a {
-    color: black; /* Set default text color to black */
-    text-decoration: underline; /* Ensure underline */
-    text-decoration-color: black; /* Set underline to black */
+    color: black; /* Default link color */
+    text-decoration: none; /* Remove default underline */
+    display: block; /* Make entire area clickable */
 }
 
 /* Hover state for blog post links */
 .blog-post a:hover {
-    color: darkgray; /* Change color on hover */
-    text-decoration-color: darkgray; /* Change underline color on hover */
+    color: darkgray; /* Change text color on hover */
+    text-decoration: underline; /* Underline on hover */
 }
 
+/* Thumbnail image styling */
 .blog-thumbnail img {
     width: 100%;
     height: auto;
     object-fit: cover;
     transition: transform 0.3s ease;
+    border-bottom: 4px solid #f1f1f1;  /* Add a subtle border below the image */
 }
 
 .blog-thumbnail img:hover {
-    transform: scale(1.1);
+    transform: scale(1.1); /* Slight zoom effect */
 }
 
+/* Blog info container */
 .blog-info {
     padding: 20px;
+    background-color: #f9f9f9; /* Light background for text */
 }
 
+/* Blog title */
 .blog-info h3 {
     font-size: 1.6rem;
     color: #333;
     margin-bottom: 10px;
+    font-weight: 600;
 }
 
+/* Blog description text */
 .blog-info p {
     font-size: 1rem;
     color: #666;
+    line-height: 1.5; /* Improved line height for better readability */
+    margin: 0;
 }
+
+/* Media query for responsive design on mobile */
+@media (max-width: 768px) {
+    /* Adjust the padding and font size on smaller screens */
+    .blog-info {
+        padding: 15px;  /* Reduce padding for mobile */
+    }
+
+    .blog-info h3 {
+        font-size: 1.4rem; /* Slightly smaller title for mobile */
+    }
+
+    .blog-info p {
+        font-size: 0.95rem; /* Adjust font size for mobile screens */
+    }
+}
+
 
 /* Tab navigation styles */
 .tab-navigation ul {
