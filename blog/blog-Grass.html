@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - "Grass: The Whisper in the Wind"</title>
+    <title>Blog - "Grass: The Whispers of the Wind"</title>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
 </head>
@@ -40,8 +40,8 @@
     </div>
     
     <header class="hero">
-        <h1>"Grass: The Whisper in the Wind"</h1>
-        <img src="../assets/imgall/DSCF0763Quickhero.jpg" class="headimg" >
+        <h1>"Grass: The Whispers of the Wind"</h1>
+        <img src="../assets/imgall/DSCF1106Quick.jpg" class="headimg" >
     </header>
     <main>
         <article class="blog-content">
@@ -50,18 +50,19 @@
 
             <h3>The Central Lake</h3>
             <p><strong>Description:</strong> The Central Lake is the heart of Royal Park, with its placid waters mirroring the sky above, the trees around it, and even the occasional bird soaring by. This tranquil body of water is a sanctuary for both wildlife and people, offering a peaceful space for those seeking solitude or a perfect spot for photographers trying to capture the perfect reflection. Early mornings, when the air is still, reveal a breathtaking sight—where the trees seem to stretch their branches to the sky, only to find their twin reflections on the water’s surface.</p>
+            <img src="../assets/imgall/central_lake.jpg" alt="Central Lake Reflection" class="water-img">
             <div class="masonry-gallery" id="gallery-images">
                 <div class="gallery-item">
-                    <img src="../assets/imgall/DSCF1106Quick.jpg" alt="DSCF1106Quick.jpg" class="gallery-image" onclick="openModal('assets/imgall/DSCF1106Quick.jpg')">
+                    <img src="../assets/imgall/DSCF1106Quick.jpg" alt="DSCF1106Quick.jpg" class="gallery-image" onclick="openModal('../assets/imgall/DSCF1106Quick.jpg')">
                 </div>
                 <div class="gallery-item">
-                    <img src="../assets/imgall/DSCF1107Quick.jpg" alt="DSCF1107Quick.jpg" class="gallery-image" onclick="openModal('assets/imgall/DSCF1107Quick.jpg')">
+                    <img src="../assets/imgall/DSCF1107Quick.jpg" alt="DSCF1107Quick.jpg" class="gallery-image" onclick="openModal('../assets/imgall/DSCF1107Quick.jpg')">
                 </div>
                 <div class="gallery-item">
-                    <img src="../assets/imgall/DSCF1108Quick.jpg" alt="DSCF1108Quick.jpg" class="gallery-image" onclick="openModal('assets/imgall/DSCF1108Quick.jpg')">
+                    <img src="../assets/imgall/DSCF1108Quick.jpg" alt="DSCF1108Quick.jpg" class="gallery-image" onclick="openModal('../assets/imgall/DSCF1108Quick.jpg')">
                 </div>
                 <div class="gallery-item">
-                    <img src="../assets/imgall/DSCF1109Quick.jpg" alt="DSCF1109Quick.jpg" class="gallery-image" onclick="openModal('assets/imgall/DSCF1109Quick.jpg')">
+                    <img src="../assets/imgall/DSCF1109Quick.jpg" alt="DSCF1109Quick.jpg" class="gallery-image" onclick="openModal('../assets/imgall/DSCF1109Quick.jpg')">
                 </div>
            </div>
            
@@ -69,6 +70,24 @@
             <p><strong>Description:</strong> Scattered throughout the park are several ornamental ponds, designed not only for their beauty but also as an ecosystem for aquatic life. These ponds, with their gently rippling waters, offer an escape from the surrounding city noise. The reflections of the park’s surrounding trees create a serene mirror effect, giving visitors a peaceful place to pause. Often, you’ll spot ducks or water lilies floating serenely on the surface, adding to the magical quality of these reflective waters.</p>
             <img src="../assets/imgall/DSCF0763Quickhero.jpg" class="headimg" >
 
+            <h3>Wetlands: A Living Mirror</h3>
+            <p><strong>Description:</strong> The wetlands of Royal Park are more than just a water feature—they are a dynamic ecosystem that mirrors the health of the environment. Here, the water is not still, but rather teems with life. The reflective surface of the water acts as a mirror to the surrounding flora and fauna, capturing the subtle movement of reeds, grasses, and aquatic creatures. During certain seasons, the wetland areas become alive with color, as birds and insects flit through the water, creating ripples that momentarily distort the reflections, only to bring them back into clarity.</p>
+            <img src="../assets/imgall/wetlands_reflection.jpg" alt="Wetlands Reflection" class="water-img">
+            <div class="masonry-gallery" id="gallery-images">
+                <div class="gallery-item">
+                    <img src="../assets/imgall/DSCF1123Quick.jpg" alt="DSCF1106Quick.jpg" class="gallery-image" onclick="openModal('../assets/imgall/DSCF1123Quick.jpg')">
+                </div>
+                <div class="gallery-item">
+                    <img src="../assets/imgall/DSCF1124Quick.jpg" alt="DSCF1107Quick.jpg" class="gallery-image" onclick="openModal('../assets/imgall/DSCF1124Quick.jpg')">
+                </div>
+                <div class="gallery-item">
+                    <img src="../assets/imgall/DSCF1125Quick.jpg" alt="DSCF1108Quick.jpg" class="gallery-image" onclick="openModal('../assets/imgall/DSCF1125Quick.jpg')">
+                </div>
+                <div class="gallery-item">
+                    <img src="../assets/imgall/DSCF1130Quick.jpg" alt="DSCF1109Quick.jpg" class="gallery-image" onclick="openModal('../assets/imgall/DSCF1130Quick.jpg')">
+                </div>
+           </div>
+           
             <h3>Conclusion</h3>
             <p>The water features in Royal Park are more than just a scenic addition—they are integral to the park's ecosystem. The ponds, lakes, wetlands, and creek create natural mirrors that reflect not only the trees and sky but also the vitality of the park itself. These bodies of water sustain life, offer peace and reflection, and provide visitors with a place to connect with nature. As you walk through Royal Park, take a moment to look into these natural mirrors—there, you’ll find a world that exists in perfect harmony, a balance of water, light, and life.</p>
             
@@ -77,6 +96,15 @@
             </footer>
         </article>
     </main>
+
+
+    <!-- Modal Structure -->
+    <div id="imageModal" class="modal">
+        <span class="modal-close" onclick="closeModal()">&times;</span>
+        <img id="modalImage" class="modal-image" src="" alt="Modal Image">
+    </div>
+
+
     <footer>
         <p>&copy; 2025 Nathan Wong. All rights reserved.</p>
     </footer>
@@ -86,6 +114,24 @@
             const mobileMenu = document.getElementById("mobileMenu");
             mobileMenu.classList.toggle("show");
         }
+        
+        // Function to open the modal and display the selected image
+        function openModal(imageSrc) {
+            document.getElementById("imageModal").style.display = "flex"; // Show the modal using flex
+            document.getElementById("modalImage").src = imageSrc; // Set the source of the modal image
+        }
+
+        // Function to close the modal
+        function closeModal() {
+            document.getElementById("imageModal").style.display = "none"; // Hide the modal
+        }
+
+        // Close modal if user clicks anywhere outside the modal content
+        window.addEventListener("click", function(event) {
+            if (event.target === document.getElementById("imageModal")) {
+                closeModal();
+            }
+        });
     </script>    
 </body>
 </html>

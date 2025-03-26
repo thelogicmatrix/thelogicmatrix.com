@@ -53,16 +53,16 @@
             <img src="../assets/imgall/central_lake.jpg" alt="Central Lake Reflection" class="water-img">
             <div class="masonry-gallery" id="gallery-images">
                 <div class="gallery-item">
-                    <img src="../assets/imgall/DSCF1106Quick.jpg" alt="DSCF1106Quick.jpg" class="gallery-image" onclick="openModal('assets/imgall/DSCF1106Quick.jpg')">
+                    <img src="../assets/imgall/DSCF1106Quick.jpg" alt="DSCF1106Quick.jpg" class="gallery-image" onclick="openModal('../assets/imgall/DSCF1106Quick.jpg')">
                 </div>
                 <div class="gallery-item">
-                    <img src="../assets/imgall/DSCF1107Quick.jpg" alt="DSCF1107Quick.jpg" class="gallery-image" onclick="openModal('assets/imgall/DSCF1107Quick.jpg')">
+                    <img src="../assets/imgall/DSCF1107Quick.jpg" alt="DSCF1107Quick.jpg" class="gallery-image" onclick="openModal('../assets/imgall/DSCF1107Quick.jpg')">
                 </div>
                 <div class="gallery-item">
-                    <img src="../assets/imgall/DSCF1108Quick.jpg" alt="DSCF1108Quick.jpg" class="gallery-image" onclick="openModal('assets/imgall/DSCF1108Quick.jpg')">
+                    <img src="../assets/imgall/DSCF1108Quick.jpg" alt="DSCF1108Quick.jpg" class="gallery-image" onclick="openModal('../assets/imgall/DSCF1108Quick.jpg')">
                 </div>
                 <div class="gallery-item">
-                    <img src="../assets/imgall/DSCF1109Quick.jpg" alt="DSCF1109Quick.jpg" class="gallery-image" onclick="openModal('assets/imgall/DSCF1109Quick.jpg')">
+                    <img src="../assets/imgall/DSCF1109Quick.jpg" alt="DSCF1109Quick.jpg" class="gallery-image" onclick="openModal('../assets/imgall/DSCF1109Quick.jpg')">
                 </div>
            </div>
            
@@ -75,16 +75,16 @@
             <img src="../assets/imgall/wetlands_reflection.jpg" alt="Wetlands Reflection" class="water-img">
             <div class="masonry-gallery" id="gallery-images">
                 <div class="gallery-item">
-                    <img src="../assets/imgall/DSCF1123Quick.jpg" alt="DSCF1106Quick.jpg" class="gallery-image" onclick="openModal('assets/imgall/DSCF1123Quick.jpg')">
+                    <img src="../assets/imgall/DSCF1123Quick.jpg" alt="DSCF1106Quick.jpg" class="gallery-image" onclick="openModal('../assets/imgall/DSCF1123Quick.jpg')">
                 </div>
                 <div class="gallery-item">
-                    <img src="../assets/imgall/DSCF1124Quick.jpg" alt="DSCF1107Quick.jpg" class="gallery-image" onclick="openModal('assets/imgall/DSCF1124Quick.jpg')">
+                    <img src="../assets/imgall/DSCF1124Quick.jpg" alt="DSCF1107Quick.jpg" class="gallery-image" onclick="openModal('../assets/imgall/DSCF1124Quick.jpg')">
                 </div>
                 <div class="gallery-item">
-                    <img src="../assets/imgall/DSCF1125Quick.jpg" alt="DSCF1108Quick.jpg" class="gallery-image" onclick="openModal('assets/imgall/DSCF1125Quick.jpg')">
+                    <img src="../assets/imgall/DSCF1125Quick.jpg" alt="DSCF1108Quick.jpg" class="gallery-image" onclick="openModal('../assets/imgall/DSCF1125Quick.jpg')">
                 </div>
                 <div class="gallery-item">
-                    <img src="../assets/imgall/DSCF1130Quick.jpg" alt="DSCF1109Quick.jpg" class="gallery-image" onclick="openModal('assets/imgall/DSCF1130Quick.jpg')">
+                    <img src="../assets/imgall/DSCF1130Quick.jpg" alt="DSCF1109Quick.jpg" class="gallery-image" onclick="openModal('../assets/imgall/DSCF1130Quick.jpg')">
                 </div>
            </div>
            
@@ -96,6 +96,15 @@
             </footer>
         </article>
     </main>
+
+
+    <!-- Modal Structure -->
+    <div id="imageModal" class="modal">
+        <span class="modal-close" onclick="closeModal()">&times;</span>
+        <img id="modalImage" class="modal-image" src="" alt="Modal Image">
+    </div>
+
+
     <footer>
         <p>&copy; 2025 Nathan Wong. All rights reserved.</p>
     </footer>
@@ -105,6 +114,24 @@
             const mobileMenu = document.getElementById("mobileMenu");
             mobileMenu.classList.toggle("show");
         }
+        
+        // Function to open the modal and display the selected image
+        function openModal(imageSrc) {
+            document.getElementById("imageModal").style.display = "flex"; // Show the modal using flex
+            document.getElementById("modalImage").src = imageSrc; // Set the source of the modal image
+        }
+
+        // Function to close the modal
+        function closeModal() {
+            document.getElementById("imageModal").style.display = "none"; // Hide the modal
+        }
+
+        // Close modal if user clicks anywhere outside the modal content
+        window.addEventListener("click", function(event) {
+            if (event.target === document.getElementById("imageModal")) {
+                closeModal();
+            }
+        });
     </script>    
 </body>
 </html>
