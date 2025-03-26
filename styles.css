@@ -123,6 +123,12 @@ body {
     background-color: #ff5a5f;
 }
 
+@media (min-width: 768px) {
+    .hero h1 {
+        font-size: 5vw; /* Start using viewport width resizing from 768px */
+    }
+}
+
 /* Mobile View Styles */
 @media (max-width: 768px) {
     /* Hide desktop nav and show mobile menu icon */
@@ -130,9 +136,7 @@ body {
         display: none;
     }
 
-    .hero h1 {
-        font-size: 10vw;  /* Scale it down more for mobile devices */
-    }
+
 
     .tab-navigation ul {
         flex-direction: column; /* Stack tabs vertically */
@@ -216,11 +220,10 @@ body {
 }
 
 .hero h1 {
-    font-size: 3.2rem;
+    font-size: 3.0rem;
     font-weight: 700;
     letter-spacing: 1.5px;
     margin-bottom: 20px;
-    font-size: 8vw;  /* Make the font size relative to the viewport width */
     text-align: center;
 }
 
