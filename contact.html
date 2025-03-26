@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Thelogicmatrix</title>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="../assets/sitefav32.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="../assets/sitefav16.png" type="image/png" sizes="16x16">
+</head>
+<body>
+    <nav class="navigation">
+        <div class="nav-left">
+            <img src="assets/sitelogo.png" alt="Site Logo" class="site-logo">
+            <span class="site-name">Thelogicmatrix</span>
+        </div>
+        <div class="nav-right">
+            <ul class="desktop-nav">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../layering-realities.html">Layering Realities</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../contact.html" class="active">Contact</a></li>
+            </ul>
+            <!-- Mobile Menu Icon (Hamburger) - Now included directly as SVG -->
+            <div class="mobile-menu-icon" onclick="toggleMobileMenu()">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero text-center">
+        <h1>Contact Me</h1>
+    </header>
+
+    <main>
+        <section id="contact">
+            <h2>Get in Touch</h2>
+            <p>If you have any questions or wish to commission work, feel free to reach out to me. I'd love to hear from you!</p>
+
+            <h3>Email</h3>
+            <p>You can email me directly at <a href="mailto:nathanwongks@gmail.com">nathanwongks@gmail.com</a>.</p>
+
+            <h3>Social Media</h3>
+            <p>You can check out my work on <a href="https://www.artstation.com/thelogicmatrix" target="_blank">ArtStation</a>.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Nathan Wong. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Function to toggle the mobile menu
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById("mobileMenu");
+            mobileMenu.classList.toggle("show");
+        }
+    </script>    
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Thelogicmatrix</title>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="../assets/sitefav32.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="../assets/sitefav16.png" type="image/png" sizes="16x16">
+</head>
+<body>
+    <nav class="navigation">
+        <div class="nav-left">
+            <img src="assets/sitelogo.png" alt="Site Logo" class="site-logo">
+            <span class="site-name">Thelogicmatrix</span>
+        </div>
+        <div class="nav-right">
+            <ul class="desktop-nav">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../layering-realities.html">Layering Realities</a></li>
+                <li><a href="../about.html" class="active">About</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+            <!-- Mobile Menu Icon (Hamburger) - Now included directly as SVG -->
+            <div class="mobile-menu-icon" onclick="toggleMobileMenu()">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero text-center">
+        <h1>About Me</h1>
+        <img src="assets/nathan.jpg" alt="Headshot" width="320px" class="mx-auto">
+    </header>
+
+    <main>
+        <section id="about">
+            <h2>Who Am I?</h2>
+            <p>I'm Nathan Wong, a creative developer and 3D artist. I specialize in 3D modeling and game development. With a passion for interactive experiences, I’ve been working in various digital mediums to create immersive worlds and functional game mechanics.</p>
+
+            <h2>What I Do</h2>
+            <p>I create 3D models for games, VR, and AR applications. My work ranges from realistic textures to stylized characters and environments. I also design games, experimenting with different mechanics to create engaging player experiences.</p>
+
+            <h2>My Work</h2>
+            <p>Explore my portfolio to see more about the projects I've worked on. I'm constantly experimenting and evolving my craft, and I’m always looking for new ways to push creative boundaries.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Nathan Wong. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Function to toggle the mobile menu
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById("mobileMenu");
+            mobileMenu.classList.toggle("show");
+        }
+    </script>    
+</body>
+</html>
