@@ -277,7 +277,8 @@ footer .backlink:hover {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Blog post styling */
+
+/* Blog post container styling */
 .blog-post {
     background-color: #fff;
     border-radius: 8px;
@@ -289,6 +290,19 @@ footer .backlink:hover {
 .blog-post:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Blog post link styles */
+.blog-post a {
+    color: black; /* Set default text color to black */
+    text-decoration: underline; /* Ensure underline */
+    text-decoration-color: black; /* Set underline to black */
+}
+
+/* Hover state for blog post links */
+.blog-post a:hover {
+    color: darkgray; /* Change color on hover */
+    text-decoration-color: darkgray; /* Change underline color on hover */
 }
 
 .blog-thumbnail img {
