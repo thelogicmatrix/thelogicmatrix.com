@@ -202,8 +202,7 @@ footer .backlink:hover {
     font-size: 1rem;
     color: #666;
 }
-
-/* Navigation tabs */
+/* Tab navigation styles */
 .tab-navigation ul {
     display: flex;
     list-style: none;
@@ -236,28 +235,66 @@ footer .backlink:hover {
     border-color: #ff5a5f;
 }
 
+/* Ensure all tab content is hidden initially */
+.tab-content {
+    display: none;
+}
+
+/* Only show the content for the active tab */
+#blog:target,
+#gallery:target,
+#3d:target,
+#audio:target {
+    display: block;
+}
+
+/* Add styles for active tab link */
+#blog:target ~ .tabs .tab-navigation ul li a[href="#blog"],
+#gallery:target ~ .tabs .tab-navigation ul li a[href="#gallery"],
+#3d:target ~ .tabs .tab-navigation ul li a[href="#3d"],
+#audio:target ~ .tabs .tab-navigation ul li a[href="#audio"] {
+    color: #fff;
+    background-color: #ff5a5f;
+    border-color: #ff5a5f;
+}
+
+/* Optional: You can add transition effects to smooth out the tab switch */
+.tab-content {
+    transition: opacity 0.3s ease;
+}
+
+/* Make sure the tab content fades in and out */
+#blog:target,
+#gallery:target,
+#3d:target,
+#audio:target {
+    opacity: 1;
+}
+
 /* Modal for image pop-out */
 .modal {
-    display: none;
+    display: none; /* Modal is hidden by default */
     position: fixed;
     z-index: 1000;
-    left: 0;
     top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.8);
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
 }
 
+/* Modal image styling */
 .modal img {
     max-width: 90%;
     max-height: 90%;
-    border-radius: 10px;        
+    object-fit: contain; /* Ensure the image scales correctly */
+    border-radius: 10px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Close button for modal */
+/* Close button styling */
 .modal-close {
     position: absolute;
     top: 20px;
@@ -267,6 +304,7 @@ footer .backlink:hover {
     cursor: pointer;
     font-weight: 700;
 }
+
 
 /* Hero image responsiveness */
 .headimg {
