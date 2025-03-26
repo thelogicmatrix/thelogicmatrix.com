@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - "Trees"</title>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="../assets/sitefav32.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="../assets/sitefav16.png" type="image/png" sizes="16x16">
+</head>
+<body>
+    <nav class="navigation">
+        <div class="nav-left">
+            <img src="../assets/sitelogo.png" alt="Site Logo" class="site-logo">
+            <span class="site-name">Thelogicmatrix</span>
+        </div>
+        <div class="nav-right">
+            <ul class="desktop-nav">
+                <li><a href="../index.html">Home</a></li> <!-- Added ../ to go to the root directory -->
+                <li><a href="../layering-realities.html" class="active">Layering Realities</a></li> <!-- Added ../ to go to the root directory -->
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <!-- Mobile Menu Icon (Hamburger) - Now included directly as SVG -->
+            <div class="mobile-menu-icon" onclick="toggleMobileMenu()">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </div>
+        </div>
+    </nav>
+    
+    
+    <!-- Mobile Menu Dropdown -->
+    <div class="mobile-dropdown" id="mobileMenu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="layering-realities.html" class="active">Layering Realities</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+    
+    <header class="hero">
+        <h1>"The Trees of Royal Park"</h1>
+        <img src="../assets/imgall/DSCF1286Quickhero.jpg" class="headimg" >
+    </header>
+    <main>
+        <article class="blog-content">
+            <h2>Introduction</h2>
+            <p>Royal Park is home to a rich variety of tree species.Here, I will go over a few of these trees as well as provide some researched information each of these, providing images where able.</p>
+
+            <h3>Eucalyptus Tree</h3>
+            <p><strong>Description:</strong> The Eucalyptus tree is an iconic Australian species, easily recognizable by its distinct bark and fragrant leaves. These trees are well adapted to the Australian climate and are a common sight in Royal Park. The Eucalyptus is an important species, providing habitat for a variety of birds and insects, and its leaves release essential oils that contribute to the park's fresh aroma.</p>
+            <img src="../assets/imgall/eucalyptus_tree.jpg" alt="Eucalyptus Tree" class="tree-img">
+
+            <h3>English Oak</h3>
+            <p><strong>Description:</strong> The English Oak is one of the oldest tree species found in Royal Park. Known for its stately appearance and long lifespan, these oak trees are a symbol of strength and endurance. They provide a rich source of food for wildlife, including squirrels, birds, and insects. Their large canopy also offers valuable shade, making them popular spots for picnics and relaxation.</p>
+            <img src="../assets/imgall/english_oak.jpg" alt="English Oak Tree" class="tree-img">
+
+            <h3>Melaleuca (Paperbark Tree)</h3>
+            <p><strong>Description:</strong> The Melaleuca, also known as the Paperbark Tree, is another fascinating species found in Royal Park. This tree is easily identified by its peeling bark and vibrant flowers. The Melaleuca thrives in wetland areas of the park, providing habitat for a wide range of wildlife. Its distinctive bark also adds texture and visual interest to the park's landscape.</p>
+            <img src="../assets/imgall/melaleuca_tree.jpg" alt="Melaleuca (Paperbark) Tree" class="tree-img">
+
+            <h3>Japanese Maple</h3>
+            <p><strong>Description:</strong> The Japanese Maple is a small, ornamental tree that adds a burst of color to the park, especially in the autumn months when its leaves turn a striking red. This tree is known for its graceful shape and delicate leaves, making it a favorite among park visitors. It is often planted in more formal garden areas and is a symbol of peace and tranquility.</p>
+            <img src="../assets/imgall/japanese_maple.jpg" alt="Japanese Maple Tree" class="tree-img">
+
+            <h3>Platanus (Plane Tree)</h3>
+            <p><strong>Description:</strong> The Platanus, or Plane Tree, is a fast-growing tree that is commonly found along the park’s pathways. Known for its broad leaves and distinctive bark that peels in patches, the Plane Tree provides excellent shade during the summer months. It’s an urban-friendly tree, capable of tolerating pollution and offering a cool respite for those taking a stroll in the park.</p>
+            <img src="../assets/imgall/plane_tree.jpg" alt="Platanus (Plane) Tree" class="tree-img">
+
+            <h3>Conclusion</h3>
+            <p>Royal Park is home to a diverse range of tree species that not only contribute to the park's aesthetic value but also support the local ecosystem. From towering Eucalyptus trees to the vibrant Japanese Maples, each tree species plays an important role in creating a balanced and healthy environment. Whether you're visiting to admire the beauty of the trees or to simply enjoy the shade on a sunny day, the trees of Royal Park are an essential part of the park's charm and ecological health.</p>
+            
+            <footer>
+                <a href="../layering-realities.html" class="backlink">← Back to Layering Realities</a>
+            </footer>
+        </article>
+    </main>
+    <footer>
+        <p>&copy; 2025 Nathan Wong. All rights reserved.</p>
+    </footer>
+    <script>
+        // Function to toggle the mobile menu
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById("mobileMenu");
+            mobileMenu.classList.toggle("show");
+        }
+    </script>    
+</body>
+</html>
