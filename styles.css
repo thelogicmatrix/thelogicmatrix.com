@@ -311,7 +311,6 @@ footer .backlink:hover {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
-
 /* Blog post container styling */
 .blog-post {
     background-color: #fff;
@@ -319,26 +318,28 @@ footer .backlink:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin-bottom: 20px;  /* Add space between blog posts */
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Hover effect for blog posts */
 .blog-post:hover {
-    transform: translateY(-5px); /* Slight elevation effect */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Increase shadow on hover */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
 /* Blog post link styles */
 .blog-post a {
-    color: black; /* Default link color */
-    text-decoration: none; /* Remove default underline */
-    display: block; /* Make entire area clickable */
+    color: black;
+    text-decoration: none;
+    display: block;  /* Make the entire blog post clickable */
 }
 
 /* Hover state for blog post links */
 .blog-post a:hover {
-    color: darkgray; /* Change text color on hover */
-    text-decoration: underline; /* Underline on hover */
+    color: darkgray;
+    text-decoration: underline;
 }
 
 /* Thumbnail image styling */
@@ -347,17 +348,18 @@ footer .backlink:hover {
     height: auto;
     object-fit: cover;
     transition: transform 0.3s ease;
-    border-bottom: 4px solid #f1f1f1;  /* Add a subtle border below the image */
 }
 
 .blog-thumbnail img:hover {
-    transform: scale(1.1); /* Slight zoom effect */
+    transform: scale(1.1);
 }
 
 /* Blog info container */
 .blog-info {
     padding: 20px;
-    background-color: #f9f9f9; /* Light background for text */
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Blog title */
@@ -372,26 +374,38 @@ footer .backlink:hover {
 .blog-info p {
     font-size: 1rem;
     color: #666;
-    line-height: 1.5; /* Improved line height for better readability */
+    line-height: 1.5;
     margin: 0;
 }
 
-/* Media query for responsive design on mobile */
+/* Mobile view adjustments */
 @media (max-width: 768px) {
-    /* Adjust the padding and font size on smaller screens */
+    .blog-post {
+        /* Center-align the blog post on mobile */
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100%;
+        padding: 10px;  /* Add padding for mobile view */
+    }
+
     .blog-info {
-        padding: 15px;  /* Reduce padding for mobile */
+        padding: 15px;
     }
 
     .blog-info h3 {
-        font-size: 1.4rem; /* Slightly smaller title for mobile */
+        font-size: 1.4rem; /* Smaller title size for mobile */
     }
 
     .blog-info p {
-        font-size: 0.95rem; /* Adjust font size for mobile screens */
+        font-size: 0.95rem; /* Smaller text size for mobile */
+    }
+
+    /* Ensure all blog post content fits within mobile screens */
+    .blog-thumbnail img {
+        width: 100%;  /* Ensure images are responsive */
+        object-fit: cover;
     }
 }
-
 
 /* Tab navigation styles */
 .tab-navigation ul {
