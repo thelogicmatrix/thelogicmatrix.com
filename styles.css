@@ -28,6 +28,7 @@ body {
     width: 40px;
     height: 40px;
     margin-right: 15px;
+    object-fit: contain; /* Ensure the logo fits properly */
 }
 
 .site-name {
@@ -36,6 +37,8 @@ body {
     font-weight: 700;
     color: #fff;
     letter-spacing: 1px;
+    line-height: 1; /* Ensure no extra space above or below the text */
+    margin: 0;
 }
 
 /* Desktop Navigation */
@@ -172,8 +175,8 @@ body {
     }
 
     .nav-left {
-        justify-content: space-between;
-        width: 100%;
+        display: flex;
+        align-items: center; /* Ensure vertical alignment */
     }
 
     /* Mobile dropdown menu becomes visible when 'show' class is added */
