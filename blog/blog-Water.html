@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - "Natural Mirrors"</title>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <nav class="navigation">
+        <div class="nav-left">
+            <img src="../assets/sitelogo.png" alt="Site Logo" class="site-logo">
+            <span class="site-name">Thelogicmatrix</span>
+        </div>
+        <div class="nav-right">
+            <ul class="desktop-nav">
+                <li><a href="../index.html">Home</a></li> <!-- Added ../ to go to the root directory -->
+                <li><a href="../layering-realities.html" class="active">Layering Realities</a></li> <!-- Added ../ to go to the root directory -->
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <!-- Mobile Menu Icon (Hamburger) - Now included directly as SVG -->
+            <div class="mobile-menu-icon" onclick="toggleMobileMenu()">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </div>
+        </div>
+    </nav>    
+    
+    <!-- Mobile Menu Dropdown -->
+    <div class="mobile-dropdown" id="mobileMenu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="layering-realities.html" class="active">Layering Realities</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+    
+    <header class="hero">
+        <h1>"Natural Mirrors: Water and Light"</h1>
+        <img src="../assets/imgall/DSCF0763Quickhero.jpg" class="headimg" >
+    </header>
+    <main>
+        <article class="blog-content">
+            <h2>Introduction</h2>
+            <p>Water has always been a reflective surface, a natural mirror that captures the surrounding world in ways unlike anything else. At Royal Park, the ponds, lakes, and wetlands provide such mirrors, amplifying the beauty of the landscape while offering a moment of calm reflection for visitors. In this post, we explore the water features of Royal Park, which not only serve as beautiful backdrops but also sustain the park’s diverse ecosystem.</p>
+
+            <h3>The Central Lake: A Glimmering Reflection</h3>
+            <p><strong>Description:</strong> The Central Lake is the heart of Royal Park, with its placid waters mirroring the sky above, the trees around it, and even the occasional bird soaring by. This tranquil body of water is a sanctuary for both wildlife and people, offering a peaceful space for those seeking solitude or a perfect spot for photographers trying to capture the perfect reflection. Early mornings, when the air is still, reveal a breathtaking sight—where the trees seem to stretch their branches to the sky, only to find their twin reflections on the water’s surface.</p>
+            <img src="../assets/imgall/central_lake.jpg" alt="Central Lake Reflection" class="water-img">
+
+            <h3>The Ornamental Ponds: A Serene Escape</h3>
+            <p><strong>Description:</strong> Scattered throughout the park are several ornamental ponds, designed not only for their beauty but also as an ecosystem for aquatic life. These ponds, with their gently rippling waters, offer an escape from the surrounding city noise. The reflections of the park’s surrounding trees create a serene mirror effect, giving visitors a peaceful place to pause. Often, you’ll spot ducks or water lilies floating serenely on the surface, adding to the magical quality of these reflective waters.</p>
+            <img src="../assets/imgall/ornamental_pond.jpg" alt="Ornamental Pond" class="water-img">
+
+            <h3>Wetlands: A Living Mirror</h3>
+            <p><strong>Description:</strong> The wetlands of Royal Park are more than just a water feature—they are a dynamic ecosystem that mirrors the health of the environment. Here, the water is not still, but rather teems with life. The reflective surface of the water acts as a mirror to the surrounding flora and fauna, capturing the subtle movement of reeds, grasses, and aquatic creatures. During certain seasons, the wetland areas become alive with color, as birds and insects flit through the water, creating ripples that momentarily distort the reflections, only to bring them back into clarity.</p>
+            <img src="../assets/imgall/wetlands_reflection.jpg" alt="Wetlands Reflection" class="water-img">
+
+            <h3>The Creek: A Flowing Reflection of Nature</h3>
+            <p><strong>Description:</strong> Unlike the still waters of the lakes and ponds, the creek that runs through Royal Park offers a more dynamic water feature. The creek’s flowing waters offer a constantly shifting mirror, reflecting the movement of the surrounding environment. Trees bend over the water, and their leaves and branches ripple across the surface as the current flows. This ever-changing mirror captures the motion of nature, offering a beautiful counterpoint to the more still waters of the park’s ponds.</p>
+            <img src="../assets/imgall/creek_flow.jpg" alt="Flowing Creek Reflection" class="water-img">
+
+            <h3>Conclusion</h3>
+            <p>The water features in Royal Park are more than just a scenic addition—they are integral to the park's ecosystem. The ponds, lakes, wetlands, and creek create natural mirrors that reflect not only the trees and sky but also the vitality of the park itself. These bodies of water sustain life, offer peace and reflection, and provide visitors with a place to connect with nature. As you walk through Royal Park, take a moment to look into these natural mirrors—there, you’ll find a world that exists in perfect harmony, a balance of water, light, and life.</p>
+            
+            <footer>
+                <a href="../layering-realities.html" class="backlink">← Back to Layering Realities</a>
+            </footer>
+        </article>
+    </main>
+    <footer>
+        <p>&copy; 2025 Nathan Wong. All rights reserved.</p>
+    </footer>
+    <script>
+        // Function to toggle the mobile menu
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById("mobileMenu");
+            mobileMenu.classList.toggle("show");
+        }
+    </script>    
+</body>
+</html>
