@@ -47,11 +47,6 @@ body {
     }
 
     .nav-right {
-        display: flex;
-        align-items: center;
-    }
-
-    .nav-right ul {
         display: none; /* Hide the desktop navigation on mobile */
     }
 
