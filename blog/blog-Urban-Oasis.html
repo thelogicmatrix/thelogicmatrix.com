@@ -14,14 +14,31 @@
             <span class="site-name">Thelogicmatrix</span>
         </div>
         <div class="nav-right">
-            <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../layering-realities.html" class="active">Layering Realities</a></li>
-                <li><a href="../#about">About</a></li>
-                <li><a href="../#contact">Contact</a></li>
+            <ul class="desktop-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="layering-realities.html" class="active">Layering Realities</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
+            <!-- Mobile Menu Icon (Hamburger) - Now included directly as SVG -->
+            <div class="mobile-menu-icon" onclick="toggleMobileMenu()">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </div>
         </div>
     </nav>
+    
+    <!-- Mobile Menu Dropdown -->
+    <div class="mobile-dropdown" id="mobileMenu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="layering-realities.html" class="active">Layering Realities</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+    
     <header class="hero">
         <h1>"Urban Oasis: The Purpose and Power of Parks in Modern Cities"</h1>
         <img src="../assets/imgall/DSCF1259Quickhero.jpg" class="headimg" >
@@ -48,5 +65,12 @@
     <footer>
         <p>&copy; 2025 Nathan Wong. All rights reserved.</p>
     </footer>
+    <script>
+        // Function to toggle the mobile menu
+function toggleMobileMenu() {
+    const mobileMenu = document.getElementById("mobileMenu");
+    mobileMenu.classList.toggle("show");
+}
+</script>    
 </body>
 </html>

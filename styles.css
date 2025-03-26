@@ -1,3 +1,4 @@
+/* General Styles */
 body {
     font-family: 'Josefin Sans', sans-serif;
     margin: 0;
@@ -8,6 +9,7 @@ body {
     font-size: 16px;
 }
 
+/* Navigation Bar Styles */
 .navigation {
     display: flex;
     justify-content: space-between;
@@ -36,70 +38,114 @@ body {
     letter-spacing: 1px;
 }
 
-/* Hide site name on mobile */
+/* Desktop Navigation */
+.nav-right .desktop-nav {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-right .desktop-nav li {
+    margin-left: 30px;
+}
+
+.nav-right .desktop-nav li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-right .desktop-nav li a:hover {
+    color: #ff5a5f;
+}
+
+/* Mobile Menu Icon (SVG) Styling */
+.mobile-menu-icon {
+    display: none; /* Hidden by default */
+    cursor: pointer;
+    width: 30px; /* Set width for the SVG */
+    height: 30px; /* Set height for the SVG */
+}
+
+.mobile-menu-icon svg {
+    width: 100%; /* Make the SVG fill its parent container */
+    height: 100%; /* Maintain the size of the parent container */
+    color: white; /* Ensure the SVG color is white for visibility */
+}
+
+/* Mobile Dropdown (Initially hidden) */
+.mobile-dropdown {
+    display: none;
+    background-color: #222;
+    position: absolute;
+    top: 60px;
+    right: 40px;
+    width: 200px;
+    padding: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+
 @media (max-width: 768px) {
+    /* Show mobile menu icon on small screens */
+    .mobile-menu-icon {
+        display: block;
+    }
+}
+
+.mobile-dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-dropdown ul li {
+    text-align: center;
+}
+
+.mobile-dropdown ul li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: 600;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.mobile-dropdown ul li a:hover {
+    background-color: #ff5a5f;
+}
+
+/* Mobile View Styles */
+@media (max-width: 768px) {
+    /* Hide desktop nav and show mobile menu icon */
+    .nav-right .desktop-nav {
+        display: none;
+    }
+
+    /* Hide the site name on mobile */
     .site-name {
         display: none;
     }
 
-    .nav-left {
-        justify-content: flex-start;
-    }
-
-    .nav-right {
-        display: none; /* Hide the desktop navigation on mobile */
-    }
-
+    /* Show the mobile menu icon (hamburger) on mobile */
     .mobile-menu-icon {
         display: block;
-        cursor: pointer;
     }
 
-    .mobile-dropdown {
-        display: none; /* Hide the dropdown initially */
-        position: absolute;
-        top: 60px;
-        right: 40px;
-        background-color: #222;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-        width: 200px;
-        padding: 10px 0;
-        border-radius: 8px;
-        z-index: 100;
+    .nav-left {
+        justify-content: space-between;
+        width: 100%;
     }
 
-    .mobile-dropdown ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    .mobile-dropdown ul li {
-        text-align: center;
-    }
-
-    .mobile-dropdown ul li a {
-        text-decoration: none;
-        color: #fff;
-        padding: 10px 20px;
-        font-size: 18px;
-        font-weight: 600;
-        display: block;
-        transition: background-color 0.3s ease;
-    }
-
-    .mobile-dropdown ul li a:hover {
-        background-color: #ff5a5f;
-    }
-
+    /* Mobile dropdown menu becomes visible when 'show' class is added */
     .mobile-dropdown.show {
         display: block;
-    }
-
-    .mobile-menu-icon svg {
-        width: 30px;
-        height: 30px;
-        color: #fff;
     }
 }
 
