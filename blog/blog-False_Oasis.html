@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - "A False Oasis: The Paradox of Parks"</title>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="../assets/sitefav32.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="../assets/sitefav16.png" type="image/png" sizes="16x16">
+</head>
+<body>
+    <nav class="navigation">
+        <div class="nav-left">
+            <img src="../assets/sitelogo.png" alt="Site Logo" class="site-logo">
+            <span class="site-name">Thelogicmatrix</span>
+        </div>
+        <div class="nav-right">
+            <ul class="desktop-nav">
+                <li><a href="../index.html">Home</a></li> <!-- Added ../ to go to the root directory -->
+                <li><a href="../layering-realities.html" class="active">Layering Realities</a></li> <!-- Added ../ to go to the root directory -->
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <!-- Mobile Menu Icon (Hamburger) - Now included directly as SVG -->
+            <div class="mobile-menu-icon" onclick="toggleMobileMenu()">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </div>
+        </div>
+    </nav>    
+    
+    <!-- Mobile Menu Dropdown -->
+    <div class="mobile-dropdown" id="mobileMenu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="layering-realities.html" class="active">Layering Realities</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+    
+    <header class="hero">
+        <h1>"A False Oasis: The Paradox of Parks"</h1>
+        <img src="../assets/imgall/DSCF1259Quickhero.jpg" class="headimg" >
+    </header>
+    <main>
+        <article class="blog-content">
+            <h2>Introduction</h2>
+            <p>I started this guide as an analysis on what the purpose and point of parks in the context of the modern city. During the course of the few weeks that I spent exploring Royal Park, I quickly found myself in a different environment from that of the bustling city around me however it felt rather barren and empty.</p>
+
+            <h3>Nature in Confinement</h3>
+            <p>In it's own way, I found parks to be bit of paradox of human priorities, the duality of wanting the constructed safe habitat and the urge to be within a natural space. Attached to the top of the article is something I feel exemplifies the sort of feeling I got whilst within the park, the facade of nature with the modernity built environment looming in the distance, in it's shiny steel glassed glory.</p>
+
+            <p>The sound of the park were interesting as there was a quiet but it wasn't quite the same complete and peaceful kind that you'd find actually away from the city, but you were constantly reminded that the city was present due to the dull roar of cars and trucks running upon the roads, the black blood of a grey heart.</p>
+
+            <p>As I walked through the park there were moments where you could have tricked me, especially when I walked through the nature circle, however, for me outside of that patch of grass the facsimile of nature didn't quite scratch the itch of nature for me.</p>
+
+            <h3>Are Parks Pointless?</h3>
+            <p>I bring this question only to raise that there is a purpose to parks, such a big part of Australian culture is to have a larger backyard so that there will be green spaces for them to play with their pets as well as have barbeques. Having grown up in Singapore, the usage as well as the point of parks are diametrically opposed to the Australian idea of the <strong>"Natural"</strong> park. The very concept of it's main purpose of a park being for mainly nature is thrown unceremoniously out the window but replaced with a urban and utilitarian perspective. Whilst they are still parks in Singapore with nature in mind, they without any question, human spaces.</p>
+
+            <p>What do I mean by this? Well, in a society and space where density is immense and the proper allocation of space is paramount, wasting it on the concerns of "nature" tantamount to comedy. So it is applied as public space, not unlike that of Australia but to different means, playgrounds, places to cycle, running and hiking tracks. The easiest to see this priority is as simple as waiting for the sun to set, while Australian parks often find themselves left in the shroud of darkness, the parks in Singapore find themselves like the environment around them, alight with the glow of an endless cascade of LED street lights. Sure it means that the animals and critters suffer, but ultimately to the human, a lit path is easier and safer to run on.</p>
+
+            <p>I am not saying which of the two conceptual ideals of the park is better but am simply pointing out the stark differences between the two. However, there is something to be said about forgoing the ideas of parks as natural spaces, and create better public space and environments for people to rest and relax within urban environment and to focus on density and using parks to promote higher density within cities, leaving real nature alone.</p>
+            
+            <footer>
+                <a href="../layering-realities.html" class="backlink">← Back to Layering Realities</a>
+            </footer>
+        </article>
+    </main>
+    <footer>
+        <p>&copy; 2025 Nathan Wong. All rights reserved.</p>
+    </footer>
+    <script>
+        // Function to toggle the mobile menu
+function toggleMobileMenu() {
+    const mobileMenu = document.getElementById("mobileMenu");
+    mobileMenu.classList.toggle("show");
+}
+</script>    
+</body>
+</html>
