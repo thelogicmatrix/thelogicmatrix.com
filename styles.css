@@ -96,6 +96,7 @@ body {
     .mobile-menu-icon {
         display: block;
     }
+    
 }
 
 .mobile-dropdown ul {
@@ -127,6 +128,10 @@ body {
     /* Hide desktop nav and show mobile menu icon */
     .nav-right .desktop-nav {
         display: none;
+    }
+
+    .hero h1 {
+        font-size: 10vw;  /* Scale it down more for mobile devices */
     }
 
     /* Hide the site name on mobile */
@@ -192,6 +197,8 @@ body {
     font-weight: 700;
     letter-spacing: 1.5px;
     margin-bottom: 20px;
+    font-size: 8vw;  /* Make the font size relative to the viewport width */
+    text-align: center;
 }
 
 .hero p {
