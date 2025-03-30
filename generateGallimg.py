@@ -1,7 +1,7 @@
 import os
 from PIL import Image  # Using Pillow to handle image dimensions
 
-# Paths
+# Paths     
 image_folder = r"C:\Users\Nathan\Documents\GitHub\thelogicmatrix.com\assets\imgall"
 template_file = r"C:\Users\Nathan\Documents\GitHub\thelogicmatrix.com\template.html"
 output_file = r"C:\Users\Nathan\Documents\GitHub\thelogicmatrix.com\layering-realities.html"
