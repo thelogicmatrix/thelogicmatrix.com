@@ -414,7 +414,9 @@ footer .backlink:hover {
 /* Only show the content for the active tab */
 #blog:target,
 #gallery:target,
-#sketches:target,
+#sketches:target{
+    display:block;
+}
 #models:target{
     display: block;
 }
