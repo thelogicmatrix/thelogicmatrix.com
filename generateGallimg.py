@@ -79,11 +79,8 @@ for filename in sorted(os.listdir(sketches_folder)):
         except Exception as e:
             print(f"Error processing {filename}: {e}")
 
-# Replace image placeholder in the template with generated content
-final_html = template_html.replace(image_placeholder, image_divs)
-
-# Replace image placeholder in the template with generated content
-final_html = template_html.replace(sketches_placeholder, sketches_divs)
+# Replace both placeholder in the template with generated content
+final_html = template_html.replace(image_placeholder, image_divs).replace(sketches_placeholder, sketches_divs)
 
 # Save the updated HTML to the output file
 try:
