@@ -414,6 +414,7 @@ footer .backlink:hover {
 /* Only show the content for the active tab */
 #blog:target,
 #gallery:target,
+#sketches:target,
 #models:target{
     display: block;
 }
@@ -424,6 +425,7 @@ footer .backlink:hover {
 /* Add styles for active tab link */
 #blog:target ~ .tabs .tab-navigation ul li a[href="#blog"],
 #gallery:target ~ .tabs .tab-navigation ul li a[href="#gallery"],
+#sketches:target ~ .tabs .tab-navigation ul li a[href="#sketches"]
 #models:target ~ .tabs .tab-navigation ul li a[href="#models"],
 #audio:target ~ .tabs .tab-navigation ul li a[href="#audio"] {
     color: #fff;
@@ -439,6 +441,7 @@ footer .backlink:hover {
 /* Make sure the tab content fades in and out */
 #blog:target,
 #gallery:target,
+#sketches:target,
 #models:target,
 #audio:target {
     opacity: 1;
@@ -488,6 +491,32 @@ footer .backlink:hover {
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+
+/* New Sketches Section */
+#sketches {
+    background-color: #fff;
+    padding: 50px 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+#sketches h2 {
+    font-size: 2.8rem;
+    color: #333;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#sketches p {
+    font-size: 1.2rem;
+    color: #666;
+    text-align: center;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+
 
 /* New Models Section */
 #models {
