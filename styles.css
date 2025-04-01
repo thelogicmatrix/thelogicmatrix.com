@@ -427,7 +427,7 @@ footer .backlink:hover {
 /* Add styles for active tab link */
 #blog:target ~ .tabs .tab-navigation ul li a[href="#blog"],
 #gallery:target ~ .tabs .tab-navigation ul li a[href="#gallery"],
-#sketches:target ~ .tabs .tab-navigation ul li a[href="#sketches"]
+#sketches:target ~ .tabs .tab-navigation ul li a[href="#sketches"],
 #models:target ~ .tabs .tab-navigation ul li a[href="#models"],
 #audio:target ~ .tabs .tab-navigation ul li a[href="#audio"] {
     color: #fff;
